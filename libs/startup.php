@@ -12,4 +12,5 @@
     define('DB_NAME', 'trungquan');
     define('DB_USER', 'root');
     define('DB_PASS', '');
+    //abc
 ?>
