@@ -1,333 +1,572 @@
-
-<script type="text/javascript">
-   $(document).ready(function() {
-       Likeproduct.init();
-       HomeProductCategory.init();
-   });
-</script>
-<!-- facebook -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=3209642075736668&autoLogAppEvents=1" nonce="ifqzKhtE"></script>
-<!-- end face -->
-<!--Start of AutoAds Tracking Code-->
-<script id='autoAdsMaxLead-widget-script' src='https://cdn.autoads.asia/scripts/autoads-maxlead-widget.js?business_id=6EA6405159044127AE6781B550B19987' type='text/javascript' charset='UTF-8' async></script>
-<!--End of AutoAds Tracking Code-->
-<script type="text/javascript">
-   var urlNow = document.URL;
-</script>
-
-<script src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/pjax/jquery.cookie.js"></script>
-<script src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/pjax/jquery.pjax.js"></script>
-<link rel="stylesheet" type="text/css" href="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/magnific-popup/magnific-popup.css" />
-<script src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/magnific-popup/jquery.magnific-popup.js"></script>
-<script type="text/javascript" src="template/modules/product/themes/resource/js/productFast.js"></script>
-
-<script src="template/modules/product/themes/resource/js/likeproduct.js"></script>
-<link rel="stylesheet" type="text/css" href="template/modules/product/themes/resource/css/toastr.css" />
-<script src="template/modules/product/themes/resource/js/toastr.js"></script>
-<script async src="template/modules/product/themes/resource/js/homeProductCategory.js"></script>
-<script type="text/javascript" src="template/modules/product/themes/resource/js/productFillter.js"></script>
-<script async type="text/javascript" src="template/modules/product/themes/resource/js/productrater.js"></script>
- <script src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/ion.rangeSlider-2.0.2/js/ion-rangeSlider/ion.rangeSlider.js" type="text/javascript"></script>
- <script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/modules/product/themes/resource/js/productSearch.js"></script>
-<div id="fast-container"></div>
-<div id="fast-dialog" class="zoom-anim-dialog mfp-hide">
-   <div id="fast-product-content"></div>
-</div>
-<script>
-              function addcart(id){
-                alert('Đã thêm sản phẩm vào giỏ hàng');
-                  $.post("payment",{'id':id}, function(data){
-                  $("#abc").load("<?=HOME?>/header #abc");
-                  $("#cartxx").load("<?=HOME?>/header #cartxx");
-
-                  // window.location.reload();
-                 });
-              }
-             
-              function deletecart(id){
-                $.post("updatecart",{'id':id,'num':0}, function(data){
-                   //load lại sau khi update
-                  
-                   $("#cartxx").load("<?=HOME?>/header #cartxx");
-                   
-                });
-              }
-              function addcart1(id){
-                 $.post("payment",{'id':id}, function(data){
-                  window.location.assign('payment');
-                });
-              }
-            </script>
-<script type="text/javascript">
-   $(document).ready(function() {
-       Likeproduct.init();
-   });
-   $(document).ready(function() {
-       ProductFillter.init();
-   });
-</script>
-</div>
-</div>
-</section>
-<style>
-   .hotlinebnc {
-   position: fixed;
-   height: 25px;
-   background: #ff0000;
-   width: 100%;
-   box-shadow: 0 0 3px rgba(0, 0, 0, 0.34);
-   color: #FFFF00;
-   line-height: 35px;
-   z-index: 400;
-   bottom: 0;
-   display: block;
-   }
-   .left-hotline {
-   float: left;
-   background: ;
-   padding: 0 1px;
-   font-size: 20px;
-   height: 30px;
-   line-height: 25px;
-   text-transform: uppercase;
-   text-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-   border-radius: 15px;
-   margin-top: 0px;
-   }
-   .right-hotline {
-   /*float: left;*/
-   padding-left: 8px;
-   line-height: 36px;
-   height: 35px;
-   /*margin-right: 30px;*/
-   }
-   .hotline-location {
-   font-weight: bold;
-   margin-right: 8px;
-   font-size: 20px;
-   color: #FFEB00;
-   }
-   .hotline-phone {
-   color: #FFF;
-   font-size: 20px;
-   font-weight: bold;
-   }
-   .hotline-email {}
-   .hotlinebnc a {
-   color: #fff;
-   }
-   @media only screen and (max-width:992px) {
-   .hotlinebnc {
-   bottom: 25px;
-   }
-   .col_2 {
-   padding: 0;
-   background: red;
-   }
-   .col_2.left-hotline {
-   margin-left: 20px;
-   }
-   .left-hotline {
-   height: 25px;
-   }
-   }
-</style>
-<div class="hotlinebnc">
-   <div class="col-md-6 col-xs-12">
-      <div class="left-hotline" style="margin-left: 0px;"><span class="glyphicon glyphicon-earphone"></span>Hotline: <a href="tel:<?=$thongtin[2]['value']?>"><?=$thongtin[2]['value']?></a> - <a href="tel:+<?=$thongtin[8]['value']?>"><?=$thongtin[8]['value']?></a>
-      </div>
-   </div>
-   <div class="col-md-6 col-xs-12 col_2">
-      <div class="left-hotline" style="margin-left: 40px;"><span class="glyphicon glyphicon-earphone"></span>Hotline: <a href="tel:+<?=$thongtin[2]['value']?>"><?=$thongtin[2]['value']?></a> - <a href="tel:+<?=$thongtin[8]['value']?>"><?=$thongtin[8]['value']?></a>
-      </div>
-   </div>
-</div>
-<!--Footer-->
-<footer class="v2_bnc_footer">
-   <div class="container">
-      <div class="row">
-         <div class="footer-bottom-top">
-            <div class="col-md-3 col-sm-12 col-xs-12">
-               <!-- Info Company -->
-               <div class="v2_bnc_footer_info_company widget-bottom">
-                  <div style="text-align: center;"><span style="color:rgb(0, 255, 255)"><span style="font-size:16px"><strong>   <img alt="" src="<?=$thongtin[7]['value']?>" style="height: 65px; width: 200px;" /></strong></span></span><br
-                     />
-                  </div>
-                  <div style="text-align: center;"><strong style="color: rgb(0, 0, 128); font-size: 20px;"><?=$thongtin[0]['value']?></strong></div>
-                  <div style="text-align: center;"><strong><span style="font-size:14px;"><span style="color:rgb(0, 0, 205);">Đc: <?=$thongtin[1]['value']?><br  />
-                     ĐT:</span><span style="color:rgb(255, 0, 0);"> </span><span style="text-align: justify;"><a href="tel:<?=$thongtin[2]['value']?>"><span style="color:rgb(255, 0, 0);"><?=$thongtin[2]['value']?></span></a></span><span style="color:rgb(255, 0, 0);"> - </span><a href="tel:<?=$thongtin[8]['value']?>"><span style="color:rgb(255, 0, 0);"><?=$thongtin[8]['value']?></span></a><br  />
-                     
-                  </div>
-                  <div style="text-align: center;"><strong><span style="font-size:14px;"><span style="color:rgb(0, 0, 205);">Email: </span><a href="mailto:<?=$thongtin[3]['value']?>"><span style="color:rgb(0, 0, 205);"><?=$thongtin[3]['value']?></span></a><br  />
-                     <span style="color:rgb(0, 0, 205);">Website: </span><a href="<?=HOME?>"><span style="color:rgb(0, 0, 205);"><?=HOME?></span></a><span style="color:rgb(0, 0, 205);"> </strong>
-                  </div>
-               </div>
-               <!-- End Info Company -->
+<footer id="footer" class="footer-site invert">
+            <div class="container  clearfix">
+                <div class="row">
+                    <div class="column span-3 ">
+                        <section id="layers-widget-column-32" class="widget layers-content-widget row content-vertical-massive about ">
+                            <div class="row container list-grid">
+                                <div id="layers-widget-column-32-42" class="layers-masonry-column layers-widget-column-42 span-12  column  has-image">
+                                    <div class="media image-top medium">
+                                        <div class="media-image ">
+                                            <img width="185" height="50" src="http://littlesaigonbakery.com/img/bg.png" class="attachment-full" alt="foot-logo" />
+                                        </div>
+                                        <div class="media-body text-justify">
+                                            <div class="excerpt">
+                                                <p>Chúng tôi xây dựng tiêu chuẩn quốc tế về y tế: môi trường thân thiện với khách hàng, dịch vụ y tế đạt tiêu chuẩn quốc tế dựa trên nền tảng ứng dụng những công nghệ tiên tiến nhất.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="column span-3 ">
+                        <section id="layers-widget-column-49" class="widget layers-content-widget row content-vertical-massive address ">
+                            <div class="container clearfix">
+                                <div class="section-title clearfix medium text-left ">
+                                    <h3 class="heading">Địa Chỉ</h3>
+                                </div>
+                            </div>
+                            <div class="row container list-grid">
+                                <div id="layers-widget-column-49-1" class="layers-masonry-column layers-widget-column-1 span-12  column ">
+                                    <div class="media image-top medium">
+                                        <div class="media-body text-left">
+                                            <div class="excerpt">
+                                                <p><i class="fa fa-home"></i> Số 123, Đường ABC, Quận ABC, Thành Phố Hồ Chí Minh</p>
+                                                <p><i class="fa fa-envelope"></i> taikhoan@tenmien.com</p>
+                                                <p><i class="fa fa-phone"></i> +84 123 456 789</p>
+                                                <p><i class="fa fa-print"></i> +84 123 456 789</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="column span-3 ">
+                        <section id="recent-posts-8" class="widget widget_recent_entries">
+                            <h5 class="section-nav-title">Bài viết mới</h5>
+                            <ul>
+                                <li>
+                                    <a href="benh-nhi-nho-tuoi-nhat-the-gioi-duoc-ghep-gan-dao-chieu/index.html">Bệnh nhi nhỏ tuổi nhất thế giới được ghép gan</a>
+                                </li>
+                                <li>
+                                    <a href="nghien-cuu-vaccin-nho-mui-phong-benh-do-chlamydia/index.html">Nghiên cứu vaccin nhỏ mũi phòng bệnh do Chlamydia</a>
+                                </li>
+                                <li>
+                                    <a href="xet-nghiem-chuan-doan/index.html">Xét nghiệm &#8211; chuẩn đoán</a>
+                                </li>
+                                <li>
+                                    <a href="kham-lam-san/index.html">Khám lâm sàn</a>
+                                </li>
+                                <li>
+                                    <a href="dich-vu-sinh/index.html">Dịch vụ sinh</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="column span-3 last">
+                        <section id="text-8" class="widget widget_text">
+                            <h5 class="section-nav-title">Liên hệ</h5>
+                            <div class="textwidget">
+                                <div role="form" class="wpcf7" id="wpcf7-f137-o1" lang="vi" dir="ltr">
+                                    <div class="screen-reader-response"></div>
+                                    <form action="http://mynet.com.vn/MN_086/#wpcf7-f137-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+                                        <div style="display: none;">
+                                            <input type="hidden" name="_wpcf7" value="137" />
+                                            <input type="hidden" name="_wpcf7_version" value="4.3.1" />
+                                            <input type="hidden" name="_wpcf7_locale" value="vi" />
+                                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f137-o1" />
+                                            <input type="hidden" name="_wpnonce" value="12c5aa709b" />
+                                        </div>
+                                        <p>
+                                            <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ Tên *" /></span>
+                                        </p>
+                                        <p>
+                                            <span class="wpcf7-form-control-wrap your-phone"><input type="text" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Số Điện Thoại *" /></span>
+                                        </p>
+                                        <p>
+                                            <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Nội dung"></textarea></span>
+                                        </p>
+                                        <p><input type="submit" value="Gửi" class="wpcf7-form-control wpcf7-submit" /></p>
+                                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3 col-sm-12 col-xs-12">
-               <!-- Footer Right -->
-               <div class="v2_bnc_footer_right_top row">
-                  <div class="col-xs-12">
-                     <div class="widget-bottom">
-                        <h4 class="v2_bnc_footer_title">Sản phẩm</h4>
-                        <ul class="v2_bnc_footer_links">
-                          <?php foreach ($danhmuc as  $value) { ?>
-                           <li>
-                              <a href="product/1/<?=$value['url']?>"><i class="fa fa-angle-double-right"></i><?=$value['name']?></a>
-                           </li>
-                           <?php } ?>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-               <!-- End Footer Right -->
+        </footer>
+        <!-- END / FOOTER -->
+        <div class="footer-bottom ">
+            <div class="container">
+                <div class="row copyright">
+                    <div class="column span-8">
+                        <p class="site-text"> © 2016 Copyright by MEDITREAT . All rights reserved</p>
+                    </div>
+                    <div id="mbmcl" class="column span-4">
+                        <a style="color:#FFFFFF;font-size:12px;" target="_blank" href="https://www.mynet.vn/">Thiết kế web giá rẻ tại TPHCM</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3 col-sm-12 col-xs-12">
-               <div class="v2_bnc_footer_social_maps margin-bottom-30">
-                  <h4 class="v2_bnc_footer_title">Bản đồ</h4>
-                  <div>
-                    <iframe frameborder="0" height="250" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.077604686441!2d105.86328841488269!3d20.9895260860196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac1a22f105eb%3A0x5105c4650ab0cba7!2zODcgTMSpbmggTmFtLCBNYWkgxJDhu5luZywgSG_DoG5nIE1haSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1601786673524!5m2!1svi!2s"
-                     style="border:0" width="100%"></iframe>
-                   </div>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-12 col-xs-12">
-               <div class="v2_bnc_footer_social_maps margin-bottom-30">
-                  <h4 class="v2_bnc_footer_title">Facebook</h4>
-                  <div>
-                    <div class="fb-page" data-href="https://www.facebook.com/Lalaland-105329694589406" data-tabs="timeline" data-width="" data-height="250" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Lalaland-105329694589406" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Lalaland-105329694589406">Lalaland</a></blockquote></div>
-                   </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <div class="v2_bnc_footer_bottom">
-      <div class="container">
-         <p class="copyright">
-            <span>Copyrights © 2020, Thiết Kế Bởi <a href="https://thuonghieuweb.com/" target="_blank">Thương Hiệu Web</a></span>
-         </p>
-      </div>
-   </div>
-</footer>
-<!--End Footer-->
-<!-- Phone mobile -->
-<div class="coccoc-alo-phone coccoc-alo-green coccoc-alo-show" id="coccoc-alo-phoneIcon" style="right:-80px; bottom: 60%;">
-   <a href='tel:<?=$thongtin[2]['value']?>'>
-      <div class="coccoc-alo-ph-circle"></div>
-      <div class="coccoc-alo-ph-circle-fill"></div>
-      <div class="coccoc-alo-ph-img-circle"></div>
-   </a>
-</div>
-<!-- End Phone mobile -->
-<!-- Scroll To Top -->
-<div class="v2_bnc_scrolltop">
-   <a class="v2_bnc_icon_scrolltop" title="Lên đầu trang !">
-   <i class="fa fa-angle-double-up fa-2x"></i>
-   </a>
-</div>
-<!-- End Scroll To Top -->
-<!-- Adv Rich Meida -->
-<div class="hidden-xs">
-</div>
-<script>
-   jQuery(function($) {
-       $('#show').hide();
-       $('#close').click(function(e) {
-           $('#rich-media').hide('slow');
-           return false;
-       });
-       $('#hide').click(function(e) {
-           $('#show').show('slow');
-           $('#hide').hide('slow');
-           $('#rich-media-item').height(0);
-           return false;
-       });
-       $('#show').click(function(e) {
-           $('#hide').show('slow');
-           $('#show').hide('slow');
-           $('#rich-media-item').height(100);
-           return false;
-       });
-   });
-</script>
-<!-- End Adv Rich Meida -->
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/template/modules/product/themes/resource/js/product.js"></script>
-<script type="text/javascript">
-   $(document).ready(function() {
-       $('body').data('home_url', 'index.html');
-       //$('body').data('page_url', '');
-       $('body').data('extension', '.html');
-       Product.init();
-       WebCommon.init();
-       // alert("-Golbal aler- "+$('body').data('home_url'));
-   });
-</script>
-</div>
-<script type="text/javascript">
-   $(document).ready(function() {
-       $('.close').click(function() {
-           $('.modal').css('display', 'none');
-       });
-   });
-</script>
-<!-- End Full Code -->
-<!-- Include JS -->
-<script src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/bootstrap/js/bootstrap.js"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/scripts/started_js.js"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/scripts/webcommon.js"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/scripts/jquery.validationEngine.js"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/scripts/jquery.validationEngine-vi.js"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/loading-overlay/loading-overlay.min.js"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/loading-overlay/load.js"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/scripts/fastCart/fastCart.js"></script>
-<link rel="stylesheet" href="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/fancybox/jquery.fancybox.css" />
-<script src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/elevatezoom/jquery.elevatezoom.js"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/pjax/jquery.cookie.js"></script>
-<script type="text/javascript" src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/scripts/search.js"></script>
-<!-- Camera SlideShow -->
-<script type='text/javascript' src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/camera-slideshow/jquery.easing.1.3.js"></script>
-<script type='text/javascript' src="template/cdn-gd-v2.webbnc.net/themes/91629/statics/plugins/camera-slideshow/camera.min.js"></script>
-<!-- End Camera SlideShow -->
-<!-- End Include JS -->
-<!-- Google Code dành cho Thẻ tiếp thị lại -->
-<!--------------------------------------------------
-   Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng cá nhân hay đặt thẻ tiếp thị lại trên các trang có liên quan đến danh mục nhạy cảm. Xem thêm thông tin và hướng dẫn về cách thiết lập thẻ trên: http://google.com/ads/remarketingsetup
-   --------------------------------------------------->
-<script type='text/javascript'>
-   /* <![CDATA[ */
-   var google_conversion_id = 805917957;
-   var google_custom_params = window.google_tag_params;
-   var google_remarketing_only = true;
-   /* ]]> */
-</script>
-<script type='text/javascript' src='template/www.googleadservices.com/pagead/f.txt'></script>
-<noscript>
-   <div style='display:inline;'>
-      <img height='1' width='1' style='border-style:none;' alt='' src='http://googleads.g.doubleclick.net/pagead/viewthroughconversion/805917957/?guid=ON&amp;script=0'/>
-   </div>
-</noscript>
-<script type="text/javascript">
-   function BNCcallback(data) {
-       console.log(data);
-   }
-   var url = document.URL;
-   var idW = '8176';
-   var uid = '';
-   var title = document.title;
-   
-   var appsScript = document.createElement('script');
-   appsScript.src = "template/apps.webbnc.vn/app3/themes/default/js/iframeResizer.js";
-   document.body.appendChild(appsScript);
-   
-   var appsScript = document.createElement('script');
-   appsScript.src = "https://apps.webbnc.vn/app3/?token=t2d32243i202r2x272y2v2c362e3h2731223e2d3q2v112i11213w2c1s202t1i1g2v1l1r242e16233h2g2e283p2f2h1334223i293g2v1l163p2z1y19342g2a2w2q2b2d1y2q2f1a2c1q2e1g18362e3u1g152c292b3h2e1c18362c2d2b3i2f11283i202e293i2d3d1y2p2z1k183r2f1u1w242f28333h2f2623342g262w2q2x2c1c342c2x18362e3h2f172w1x1d14213w2c1q2f2b3x2u292p1p1";
-   setTimeout(function() {
-       document.body.appendChild(appsScript);
-   }, 1000);
-</script>
+        </div>
+    </section>
+    <!-- END / MAIN SITE #wrapper -->
+    <script>
+        var link = jQuery(".header-site .nav li.menu-item-has-children > a");
+        var linka = link.attr("href");
+
+        jQuery(".header-site .nav li.menu-item-has-children > a").on("touchstart", function(e) {
+            if (link.hasClass("abc")) {
+
+                return true;
+                link.removeClass("abc");
+
+            } else {
+
+                e.preventDefault();
+                link.addClass("abc");
+                return false;
+            }
+        });
+    </script>
+    <script>
+        jQuery("#off-canvas-right .nav-mobile ul li a").on("touchstart", function() {
+            return true;
+        });
+    </script>
+    <script src="template/wp-content/themes/layerswp-child/js/post-social.js"></script>
+    <script src="template/wp-content/themes/layerswp-child/js/contact.js"></script>
+    <script src="template/wp-content/themes/layerswp-child/js/search.js"></script>
+    <script src="template/wp-content/themes/layerswp-child/js/sub-menu.js"></script>
+    <link rel='stylesheet' id='layers-slider-css' href='template/wp-content/themes/layerswp/core/widgets/css/swiper077c.css?ver=1.2.9' type='text/css' media='all' />
+    <link rel='stylesheet' id='layers-plus-hero-slider-css' href='template/wp-content/plugins/layers-plus/assets/css/hero-slider00a3.css?ver=4.2.28' type='text/css' media='all' />
+    <link rel='stylesheet' id='layers-inline-styles-css' href='template/wp-content/themes/layerswp/assets/css/inline00a3.css?ver=4.2.28' type='text/css' media='all' />
+    <style id='layers-inline-styles-inline-css' type='text/css'>
+        body {
+            font-family: Open Sans, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        
+        .footer-site {
+            background-color: #1e2127;
+        }
+        
+        #layers-widget-slide-35-256 {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url('template/wp-content/uploads/2016/08/Slider1.jpg');
+        }
+        
+        #layers-widget-slide-35-256 h3.heading,
+        #layers-widget-slide-35-256 h3.heading a,
+        #layers-widget-slide-35-256 div.excerpt {
+            color: #eeee22;
+        }
+        
+        #layers-widget-slide-35-63 {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url('template/wp-content/uploads/2016/08/Slider2.jpg');
+        }
+        
+        #layers-widget-slide-35-63 h3.heading,
+        #layers-widget-slide-35-63 h3.heading a,
+        #layers-widget-slide-35-63 div.excerpt {
+            color: #eeee22;
+        }
+        
+        #layers-widget-column-42 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-42-267 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-42-438 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-42-401 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-43 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-43-267 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-43-438 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-43-401 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-43-151 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-hero_slider_column_hero-5 {
+            background-color: #EFF2F5;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('template/wp-content/uploads/2016/08/back111.jpg');
+        }
+        
+        #layers-widget-hero_slider_column_hero-5-584 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-hero_slider_column_hero-5-584 h5.heading a,
+        #layers-widget-hero_slider_column_hero-5-584 h5.heading,
+        #layers-widget-hero_slider_column_hero-5-584 div.excerpt,
+        #layers-widget-hero_slider_column_hero-5-584 div.excerpt p {
+            color: #fff;
+        }
+        
+        #layers-widget-layers_plus_column_team-5 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_team-5-34 {
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_team-5-34 h5.heading a,
+        #layers-widget-layers_plus_column_team-5-34 h5.heading,
+        #layers-widget-layers_plus_column_team-5-34 div.excerpt,
+        #layers-widget-layers_plus_column_team-5-34 div.excerpt p {
+            color: #333333;
+        }
+        
+        #layers-widget-layers_plus_column_team-5-410 {
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_team-5-410 h5.heading a,
+        #layers-widget-layers_plus_column_team-5-410 h5.heading,
+        #layers-widget-layers_plus_column_team-5-410 div.excerpt,
+        #layers-widget-layers_plus_column_team-5-410 div.excerpt p {
+            color: #333333;
+        }
+        
+        #layers-widget-layers_plus_column_team-5-905 {
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_team-5-905 h5.heading a,
+        #layers-widget-layers_plus_column_team-5-905 h5.heading,
+        #layers-widget-layers_plus_column_team-5-905 div.excerpt,
+        #layers-widget-layers_plus_column_team-5-905 div.excerpt p {
+            color: #333333;
+        }
+        
+        #layers-widget-layers_plus_column_team-5-79 {
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_team-5-79 h5.heading a,
+        #layers-widget-layers_plus_column_team-5-79 h5.heading,
+        #layers-widget-layers_plus_column_team-5-79 div.excerpt,
+        #layers-widget-layers_plus_column_team-5-79 div.excerpt p {
+            color: #333333;
+        }
+        
+        #layers-widget-layers_plus_column_gridmaker-3 {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('template/wp-content/uploads/2016/08/back11.jpg');
+        }
+        
+        #layers-widget-column-45 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-45-823 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_xvaccordion-5 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_xvaccordion-5 .uk-accordion-content {
+            padding: 10px 4px 10px 4px;
+        }
+        
+        #layers-widget-layers_plus_column_xvaccordion-5 .uk-accordion-title {
+            padding: 12px 25px 12px 25px;
+        }
+        
+        #layers-widget-layers_plus_column_xvaccordion-5-923 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_xvaccordion-5-132 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_xvaccordion-5-653 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_xvaccordion-5-853 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_posts-11 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_posts-11 .thumbnail:not(.with-overlay) .thumbnail-body {
+            background-color: #F5F5F5;
+        }
+        
+        #layers-widget-lcam_posts-11 button.lcam-carousel-to-prev,
+        #layers-widget-lcam_posts-11 button.lcam-carousel-to-next {
+            background-color: #373737;
+        }
+        
+        #layers-widget-lcam_posts-11 button.lcam-carousel-to-prev,
+        #layers-widget-lcam_posts-11 button.lcam-carousel-to-next {
+            color: #ffffff;
+        }
+        
+        #layers-widget-layers_plus_column_gridmaker-5 {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('template/wp-content/uploads/2016/08/back11.jpg');
+        }
+        
+        #layers-widget-layers_plus_column_counter-3 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_counter-3-430 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_counter-3-279 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_counter-3-782 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-layers_plus_column_counter-3-320 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-47 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-column-47-139 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_contents-11 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_contents-11 button.lcam-carousel-to-prev,
+        #layers-widget-lcam_contents-11 button.lcam-carousel-to-next {
+            background-color: #373737;
+        }
+        
+        #layers-widget-lcam_contents-11 button.lcam-carousel-to-prev,
+        #layers-widget-lcam_contents-11 button.lcam-carousel-to-next {
+            color: #ffffff;
+        }
+        
+        #layers-widget-lcam_contents-11-783 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_contents-11-324 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_contents-15 {
+            background-color: #efefef;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_contents-15 button.lcam-carousel-to-prev,
+        #layers-widget-lcam_contents-15 button.lcam-carousel-to-next {
+            background-color: #373737;
+        }
+        
+        #layers-widget-lcam_contents-15 button.lcam-carousel-to-prev,
+        #layers-widget-lcam_contents-15 button.lcam-carousel-to-next {
+            color: #ffffff;
+        }
+        
+        #layers-widget-lcam_contents-15-261 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_contents-15-946 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_contents-15-451 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #layers-widget-lcam_contents-15-594 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+    <link rel='stylesheet' id='layers-custom-styles-css' href='template/wp-content/themes/layerswp/assets/css/custom00a3.css?ver=4.2.28' type='text/css' media='all' />
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var thickboxL10n = {
+            "next": "Trang sau >",
+            "prev": "< Trang tr\u01b0\u1edbc",
+            "image": "\u1ea2nh",
+            "of": "c\u1ee7a",
+            "close": "\u0110\u00f3ng",
+            "noiframes": "T\u00ednh n\u0103ng n\u00e0y y\u00eau c\u1ea7u b\u1eadt frame. B\u1ea1n c\u00f3 th\u1ec3 \u0111\u00e3 t\u1eaft t\u00ednh n\u0103ng n\u00e0y ho\u1eb7c tr\u00ecnh duy\u1ec7t kh\u00f4ng h\u1ed7 tr\u1ee3.",
+            "loadingAnimation": "http:\/\/mynet.com.vn\/MN_086\/template/wp-includes\/js\/thickbox\/loadingAnimation.gif"
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='template/wp-includes/js/thickbox/thickboxab87.js?ver=3.1-20121105'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/sitepress-multilingual-cms/res/js/language-selector2c3d.js?ver=3.2.7'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var x_loader = {
+            "startPage": "1",
+            "maxPages": "3",
+            "nextLink": "http:\/\/mynet.com.vn\/MN_086\/page\/2\/",
+            "selector_m": "",
+            "selector_p": "",
+            "selector_n": "",
+            "selector_a": "animation-parent ",
+            "selector_isotope": ".grid",
+            "string_load_more": "Loade More",
+            "string_no_more": "No More Posts",
+            "string_loading": "Loading ...",
+            "gif": "http:\/\/mynet.com.vn\/MN_086\/template/wp-content\/plugins\/layers-plus\/assets\/img\/g1.gif"
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='template/wp-content/plugins/layers-plus/assets/js/load-posts5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/contact-form-7/includes/js/jquery.form.mind03d.js?ver=3.51.0-2014.06.20'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpcf7 = {
+            "loaderUrl": "http:\/\/mynet.com.vn\/MN_086\/template/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif",
+            "recaptchaEmpty": "Please verify that you are not a robot.",
+            "sending": "\u0110ang g\u1eedi...."
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='template/wp-content/plugins/contact-form-7/includes/js/scripts5b31.js?ver=4.3.1'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var layers_script_settings = {
+            "header_sticky_breakpoint": "270"
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='template/wp-content/themes/layerswp/assets/js/layers.framework077c.js?ver=1.2.9'></script>
+    <script type='text/javascript' src='template/wp-includes/js/comment-reply.min00a3.js?ver=4.2.28'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/layers-plus/assets/js/css3-animate-it00a3.js?ver=4.2.28'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/layers-plus/assets/js/elements00a3.js?ver=4.2.28'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/layers-plus/assets/js/load-callback5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/templatera-layerswp/assets/js/elements00a3.js?ver=4.2.28'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var icl_vars = {
+            "current_language": "vi",
+            "icl_home": "http:\/\/mynet.com.vn\/MN_086\/",
+            "ajax_url": "http:\/\/mynet.com.vn\/MN_086\/wp-admin\/admin-ajax.php",
+            "url_type": "1"
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='template/wp-content/plugins/sitepress-multilingual-cms/res/js/sitepress00a3.js?ver=4.2.28'></script>
+    <script type='text/javascript' src='template/wp-content/themes/layerswp/core/widgets/js/swiper077c.js?ver=1.2.9'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/layers-plus/assets/js/hero-slider00a3.js?ver=4.2.28'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/layers-plus/assets/js/accordion.min00a3.js?ver=4.2.28'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/layers-plus/assets/js/uikit.min00a3.js?ver=4.2.28'></script>
+    <script type='text/javascript' src='template/wp-content/plugins/layers-carousel-mojo/assets/js/jquery.bxslider.mind19b.js?ver=4.2.5'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var LCAMOJO = {
+            "MobileWidth": "380",
+            "tablet1Width": "550",
+            "tablet2Width": "730",
+            "LaptopWidth": "910"
+        };
+        var LCAMOJO = {
+            "MobileWidth": "380",
+            "tablet1Width": "550",
+            "tablet2Width": "730",
+            "LaptopWidth": "910"
+        };
+        var LCAMOJO = {
+            "MobileWidth": "380",
+            "tablet1Width": "550",
+            "tablet2Width": "730",
+            "LaptopWidth": "910"
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='template/wp-content/plugins/layers-carousel-mojo/assets/js/plugin8a54.js?ver=1.0.0'></script>
 </body>
-<!-- Mirrored from chauminh.vn/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Oct 2020 07:45:49 GMT -->
+<!-- Mirrored from mynet.com.vn/MN_086/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Aug 2020 12:49:28 GMT -->
+
 </html>
