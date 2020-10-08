@@ -103,6 +103,15 @@
     <script type='text/javascript' src='template/wp-includes/js/jquery/jquery4a80.js?ver=1.11.2'></script>
     <script type='text/javascript' src='template/wp-includes/js/jquery/jquery-migrate.min1576.js?ver=1.2.1'></script>
     <script type='text/javascript' src='template/wp-content/themes/layerswp/assets/js/plugins077c.js?ver=1.2.9'></script>
+    <meta property="og:url"                content="<?php echo HOME.'/'.$thisurl ?>" />
+      <meta property="og:type"               content="article" />
+      <meta property="og:title"              content="<?php echo $page['title'] ?>" />
+      <meta property="og:description"        content="<?php echo $page['description']?>" />
+      <?php if ($page['image']!='') {
+            echo '<meta property="og:image"    content="'.$page['image'].'" />';
+      }else{
+            echo '<meta property="og:image"      content="'.$thongtin[7]['value'].'" />';
+      } ?>
     <link rel='shortlink' href='index.html' />
     <meta name="generator" content="WPML ver:3.2.7 stt:59;" />
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
@@ -160,7 +169,7 @@
             <div class="menu-trinh-don-chinh-container">
                 <ul id="menu-trinh-don-chinh-1" class="menu">
                     <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-372 current_page_item menu-item-381"><a href="index.html">Trang chủ</a></li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a href="">Giới thiệu</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-475"><a href="">Giới thiệu</a></li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-644">
                         <a href="">Dịch vụ</a>
                         <ul class="sub-menu">
@@ -209,8 +218,8 @@
                 </div>
                 <nav class="nav nav-horizontal">
                     <ul id="menu-trinh-don-chinh-2" class="menu">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-372 current_page_item menu-item-381"><a href="index.html">Trang chủ</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a href="">Giới thiệu</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page <?php if ($url[0]=='') echo 'current-menu-item '; ?> page_item page-item-372 current_page_item menu-item-381"><a href="<?=HOME?>">Trang chủ</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page <?php if ($url[0]=='about') echo 'current-menu-item '; ?> menu-item-475"><a href="">Giới thiệu</a></li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-644">
                             <a href="">Dịch vụ</a>
                             <ul class="sub-menu">
@@ -223,8 +232,8 @@
                                 <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-711"><a href="">Tổng đài ảo</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-683"><a href="">Tin tức</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-645"><a href="">Liên hệ</a></li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category <?php if ($url[0]=='blog') echo 'current-menu-item '; ?>  menu-item-683"><a href="">Tin tức</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page <?php if ($url[0]=='lienhe') echo 'current-menu-item '; ?> menu-item-645"><a href="">Liên hệ</a></li>
                     </ul>
                     <a href="#" class="responsive-nav" data-toggle="#off-canvas-right" data-toggle-class="open">
                         <span class="l-menu"></span>
