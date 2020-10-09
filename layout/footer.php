@@ -7,11 +7,11 @@
                                 <div id="layers-widget-column-32-42" class="layers-masonry-column layers-widget-column-42 span-12  column  has-image">
                                     <div class="media image-top medium">
                                         <div class="media-image ">
-                                            <img width="185" height="50" src="http://littlesaigonbakery.com/img/bg.png" class="attachment-full" alt="foot-logo" />
+                                            <img width="185" height="50" src="<?=$thongtin[7]['value']?>" class="attachment-full" alt="foot-logo" />
                                         </div>
                                         <div class="media-body text-justify">
                                             <div class="excerpt">
-                                                <p>Chúng tôi xây dựng tiêu chuẩn quốc tế về y tế: môi trường thân thiện với khách hàng, dịch vụ y tế đạt tiêu chuẩn quốc tế dựa trên nền tảng ứng dụng những công nghệ tiên tiến nhất.</p>
+                                                <p><?=$thongtin[5]['value']?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -31,10 +31,10 @@
                                     <div class="media image-top medium">
                                         <div class="media-body text-left">
                                             <div class="excerpt">
-                                                <p><i class="fa fa-home"></i> Số 123, Đường ABC, Quận ABC, Thành Phố Hồ Chí Minh</p>
-                                                <p><i class="fa fa-envelope"></i> taikhoan@tenmien.com</p>
-                                                <p><i class="fa fa-phone"></i> +84 123 456 789</p>
-                                                <p><i class="fa fa-print"></i> +84 123 456 789</p>
+                                                <p><i class="fa fa-home"></i> <?=$thongtin[1]['value']?></p>
+                                                <p><i class="fa fa-envelope"></i> <?=$thongtin[3]['value']?></p>
+                                                <p><i class="fa fa-phone"></i> <?=$thongtin[2]['value']?></p>
+                                                <p><i class="fa fa-print"></i> <?=HOME?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -68,29 +68,22 @@
                         <section id="text-8" class="widget widget_text">
                             <h5 class="section-nav-title">Liên hệ</h5>
                             <div class="textwidget">
-                                <div role="form" class="wpcf7" id="wpcf7-f137-o1" lang="vi" dir="ltr">
+                                <!-- <div role="form" class="wpcf7" id="wpcf7-f137-o1" lang="vi" dir="ltr"> -->
                                     <div class="screen-reader-response"></div>
-                                    <form action="http://mynet.com.vn/MN_086/#wpcf7-f137-o1" method="post" class="wpcf7-form" novalidate="novalidate">
-                                        <div style="display: none;">
-                                            <input type="hidden" name="_wpcf7" value="137" />
-                                            <input type="hidden" name="_wpcf7_version" value="4.3.1" />
-                                            <input type="hidden" name="_wpcf7_locale" value="vi" />
-                                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f137-o1" />
-                                            <input type="hidden" name="_wpnonce" value="12c5aa709b" />
-                                        </div>
+                                    <form action="" method="post" class="wpcf7-form" >
                                         <p>
-                                            <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ Tên *" /></span>
+                                            <span class="wpcf7-form-control-wrap your-name"><input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ Tên *" required /></span>
                                         </p>
                                         <p>
-                                            <span class="wpcf7-form-control-wrap your-phone"><input type="text" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Số Điện Thoại *" /></span>
+                                            <span class="wpcf7-form-control-wrap your-phone"><input type="text" name="sdt" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Số Điện Thoại *" required /></span>
                                         </p>
                                         <p>
-                                            <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Nội dung"></textarea></span>
+                                            <span class="wpcf7-form-control-wrap your-message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Nội dung"></textarea></span>
                                         </p>
-                                        <p><input type="submit" value="Gửi" class="wpcf7-form-control wpcf7-submit" /></p>
-                                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                        <p><input type="submit" name="btnsend" value="Gửi" class="wpcf7-form-control wpcf7-submit" /></p>
+                                       
                                     </form>
-                                </div>
+                                <!-- </div> -->
                             </div>
                         </section>
                     </div>
@@ -102,10 +95,10 @@
             <div class="container">
                 <div class="row copyright">
                     <div class="column span-8">
-                        <p class="site-text"> © 2016 Copyright by MEDITREAT . All rights reserved</p>
+                        <p class="site-text"> © 2020 Copyright by Thuonghieuweb . All rights reserved</p>
                     </div>
                     <div id="mbmcl" class="column span-4">
-                        <a style="color:#FFFFFF;font-size:12px;" target="_blank" href="https://www.mynet.vn/">Thiết kế web giá rẻ tại TPHCM</a>
+                        <a style="color:#FFFFFF;font-size:12px;" target="_blank" href="https://thuonghieuweb.com/">Thiết kế web giá rẻ tại Hà Nội</a>
                     </div>
                 </div>
             </div>
@@ -155,7 +148,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-            background-image: url('template/wp-content/uploads/2016/08/Slider1.jpg');
+           
         }
         
         #layers-widget-slide-35-256 h3.heading,

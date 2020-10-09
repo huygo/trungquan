@@ -1,4 +1,6 @@
-
+<?php
+    $banner=$data->getbanner(1);
+?>
         <section id="wrapper-content" class="wrapper-content">
             <section id="layers-widget-slide-35" class="widget layers-slider-widget row slide swiper-container slidershow slider-top   auto-height not-full-screen" style="">
                 <div class="arrows">
@@ -10,7 +12,8 @@
                     <a href="#" class="page animate "></a>
                 </div>
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide invert has-image image-top text-left " id="layers-widget-slide-35-256" style="float: left; ">
+                    <?php foreach ($banner as $value) { ?>
+                    <div class="swiper-slide invert has-image image-top text-left " id="layers-widget-slide-35-256" style="float: left;  background-image: url('<?=$value['hinh_anh']?>'); ">
                         <div class="overlay content">
                             <div class="container clearfix">
                             </div>
@@ -18,14 +21,15 @@
                         </div>
                         <!-- .overlay -->
                     </div>
-                    <div class="swiper-slide invert has-image image-top text-left " id="layers-widget-slide-35-63" style="float: left; ">
+                    <?php } ?>
+                    <!-- <div class="swiper-slide invert has-image image-top text-left " id="layers-widget-slide-35-63" style="float: left; ">
                         <div class="overlay content">
                             <div class="container clearfix">
-                            </div>
+                            </div> -->
                             <!-- .container -->
-                        </div>
+                        <!-- </div> -->
                         <!-- .overlay -->
-                    </div>
+                    <!-- </div> -->
                 </div>
             </section>
             <script>
@@ -79,11 +83,11 @@
                         <div class="media image-top medium">
                             <div class="media-body text-left">
                                 <h5 class="heading">
-                                    <h1>Meditreat</h1>
+                                    <h1><?=$thongtin[0]['value']?></h1>
                                     <h2>Giới Thiệu</h2>
                                 </h5>
                                 <div class="excerpt">
-                                    <p>Hầu hết mỗi công ty đều có bài giới thiệu về doanh nghiệp mình, nhưng để có được một bài giới thiệu đầy đủ.</p>
+                                    <p><?=$thongtin[5]['value']?></p>
                                 </div>
                             </div>
                         </div>
@@ -92,11 +96,11 @@
                         <div class="media image-top medium">
                             <div class="media-body text-left">
                                 <h5 class="heading">
-                                    <h1>15 năm kinh ngiệm</h1>
-                                    <h2> Khám và Chữa Bệnh</h2>
+                                    <h1>Tầm nhìn</h1>
+                                    <h2> <?=$thongtin[0]['value']?></h2>
                                 </h5>
                                 <div class="excerpt">
-                                    <p>Xây dựng từ năm 2001, chúng tôi đã đạt nhiều thành tích trong công tác khám và chữa bệnh đồng thời được đánh giá cao .</p>
+                                    <p><?=$thongtin[11]['value']?></p>
                                 </div>
                             </div>
                         </div>
@@ -105,12 +109,12 @@
                         <div class="media image-top medium">
                             <div class="media-body text-left">
                                 <h5 class="heading">
-                                    <h1>Đội ngũ</h1>
-                                    <h2> Y - Bác Sĩ </h2>
+                                    <h1>Sứ mệnh</h1>
+                                    <h2> <?=$thongtin[0]['value']?> </h2>
                                 </h5>
                                 <div class="excerpt">
                                     <section>
-                                        <p>Luôn tận tâm phục vụ quý khách, với đội ngũ y &#8211; bác sĩ , điều dưỡng lành nghề và có trách nhiệm trong công việc.</p>
+                                        <p><?=$thongtin[12]['value']?></p>
                                     </section>
                                 </div>
                             </div>

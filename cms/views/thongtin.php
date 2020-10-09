@@ -27,7 +27,7 @@
                                   <tbody>
                                       <?php
                                         $i=0;
-                                        foreach($this->data as$row)
+                                        foreach($this->data as$row){
                                           echo '<tr>
                                               <td>'.$row['id'].'</td>
                                               <td>'.$row['name'].'</td>
@@ -38,6 +38,7 @@
                                               <td><a href="thongtin/del?id='.$i.'"><i class="fa fa-trash-o"></i></a>  </td>
                                           </tr>';
                                           $i++;
+                                        }
                                       ?>
                                   </tbody>
                               </table>

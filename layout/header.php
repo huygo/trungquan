@@ -1,3 +1,6 @@
+<?php
+    $menu= $data->topmenu();
+?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -168,22 +171,17 @@
         <aside id="nav_menu-5" class="content widget widget_nav_menu">
             <div class="menu-trinh-don-chinh-container">
                 <ul id="menu-trinh-don-chinh-1" class="menu">
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-372 current_page_item menu-item-381"><a href="index.html">Trang chủ</a></li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-475"><a href="">Giới thiệu</a></li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-644">
-                        <a href="">Dịch vụ</a>
+                <?php foreach ($menu as $value) { $menucon=$data->menucon($value['id']) ?>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page <?php if ($url[0]==$value['url']) echo 'current-menu-item '; ?> <?php if (sizeof($menucon)>0) echo 'menu-item-has-children'; ?>  menu-item-<?=$item['id']?>">
+                        <a href="<?=$value['url']?>"><?=$value['name']?></a>
                         <ul class="sub-menu">
-                            <li id="menu-item-705" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-705"><a href="">Telesale</a></li>
-                            <li id="menu-item-706" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-706"><a href="">Telemarketing</a></li>
-                            <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-707"><a href="">Contact center</a></li>
-                            <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-707"><a href="">SMS marketing</a></li>
-                            <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-707"><a href="">Email marketing</a></li>
-                            <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-707"><a href="">Facebook Marketing</a></li>
-                            <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-707"><a href="">Tổng đài ảo</a></li>
+                        <?php foreach ($menucon as $item) {  ?>
+                            <li id="menu-item-<?=$item['id']?>" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-<?=$item['id']?>"><a href="<?=$item['url']?>"><?=$item['name']?></a></li>
+                        <?php } ?>
                         </ul>
                     </li>
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-683"><a href="">Tin tức</a></li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-645"><a href="">Liên hệ</a></li>
+                <?php } ?>
+                   
                 </ul>
             </div>
         </aside>
@@ -193,16 +191,15 @@
             <div class="container clearfix">
                 <nav class="pull-left">
                     <ul id="menu-menu-top-trai" class="nav nav-horizontal">
-                        <li id="menu-item-646" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-646"><a href="#">taikhoan@tenmien.com</a></li>
-                        <li id="menu-item-647" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-647"><a href="#">+84 123 456 789</a></li>
+                        <li id="menu-item-646" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-646"><a href="mailto:<?=$thongtin[3]['value']?>"><?=$thongtin[3]['value']?></a></li>
+                        <li id="menu-item-647" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-647"><a href="tel:<?=$thongtin[2]['value']?>"><?=$thongtin[2]['value']?></a></li>
                     </ul>
                 </nav>
                 <nav class="pull-right">
                     <ul id="menu-favicon" class="nav nav-horizontal">
-                        <li id="menu-item-648" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-648"><a target="_blank" href="http://facebook.com/">facebook</a></li>
-                        <li id="menu-item-651" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-651"><a target="_blank" href="https://twitter.com/">twitter</a></li>
+                        <li id="menu-item-648" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-648"><a target="_blank" href="<?=$thongtin[9]['value']?>">facebook</a></li>
+                        <li id="menu-item-651" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-651"><a target="_blank" href="<?=$thongtin[10]['value']?>">twitter</a></li>
                         <li id="menu-item-650" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-650"><a target="_blank" href="http://linkedin.com/">linkedin</a></li>
-                        <li id="menu-item-649" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-649"><a target="_blank" href="http://google.com/">google</a></li>
                     </ul>
                 </nav>
             </div>
@@ -210,30 +207,27 @@
         <header class="header-site header-sticky header-left">
             <div class="container clearfix">
                 <div class="logo">
-                    <a href="index.html" class="site-logo-link" rel="home"><img width="223" height="73" src="http://littlesaigonbakery.com/img/bg.png" class="site-logo attachment-large" alt="logo" data-size="large" style="width: 223px;height: 73px;" /></a>
+                    <a href="<?=HOME?>" class="site-logo-link" rel="home"><img width="223" height="73" src="<?=$thongtin[7]['value']?>" class="site-logo attachment-large" alt="logo" data-size="large" style="width: 223px;height: 73px;" /></a>
                     <div class="site-description">
-                        <h3 class="sitename sitetitle"><a href="http://mynet.com.vn/MN_086">Meditreat</a></h3>
+                        <h3 class="sitename sitetitle"><a href="<?=HOME?>"><?=$thongtin[0]['value']?></a></h3>
                         <p class="tagline"></p>
                     </div>
                 </div>
                 <nav class="nav nav-horizontal">
                     <ul id="menu-trinh-don-chinh-2" class="menu">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page <?php if ($url[0]=='') echo 'current-menu-item '; ?> page_item page-item-372 current_page_item menu-item-381"><a href="<?=HOME?>">Trang chủ</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page <?php if ($url[0]=='about') echo 'current-menu-item '; ?> menu-item-475"><a href="">Giới thiệu</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-644">
-                            <a href="">Dịch vụ</a>
+
+                        <?php foreach ($menu as $value) { $menucon=$data->menucon($value['id']) ?>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page <?php if ($url[0]==$value['url']) echo 'current-menu-item '; ?>  menu-item-has-children menu-item-644">
+                            <a href="<?=$value['url']?>"><?=$value['name']?></a>
                             <ul class="sub-menu">
-                                <li id="menu-item-705" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-705"><a href="">Telesale</a></li>
-                                <li id="menu-item-706" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-706"><a href="">Telemarketing</a></li>
-                                <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-707"><a href="">Contact center</a></li>
-                                <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-708"><a href="">SMS marketing</a></li>
-                                <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-709"><a href="">Email marketing</a></li>
-                                <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-710"><a href="">Facebook Marketing</a></li>
-                                <li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-711"><a href="">Tổng đài ảo</a></li>
+                            <?php foreach ($menucon as $item) { ?>
+                                <li id="menu-item-705" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-705"><a href="<?=$item['url']?>"><?=$item['name']?></a></li>
+                            <?php } ?>
+                                
                             </ul>
                         </li>
-                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category <?php if ($url[0]=='blog') echo 'current-menu-item '; ?>  menu-item-683"><a href="">Tin tức</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page <?php if ($url[0]=='lienhe') echo 'current-menu-item '; ?> menu-item-645"><a href="">Liên hệ</a></li>
+                        <?php } ?>
+                        
                     </ul>
                     <a href="#" class="responsive-nav" data-toggle="#off-canvas-right" data-toggle-class="open">
                         <span class="l-menu"></span>
@@ -244,10 +238,10 @@
                         </div>
                         <div class="template-search-form ">
                             <div></div>
-                            <form role="search" method="get" class="search-form" action="http://mynet.com.vn/MN_086/">
+                            <form role="search" method="get" class="search-form" action="search">
                                 <label>
                            <span class="screen-reader-text">Tìm kiếm cho:</span>
-                           <input type="search" class="search-field" placeholder="Tìm kiếm &hellip;" value="" name="s" title="Tìm kiếm cho:" />
+                           <input type="search" class="search-field" placeholder="Tìm kiếm &hellip;" value="" name="key" title="Bạn muốn tìm gì:" />
                            </label>
                                 <input type="submit" class="search-submit" value="Tìm kiếm" />
                                 <input type='hidden' name='lang' value='vi' />

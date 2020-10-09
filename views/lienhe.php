@@ -14,66 +14,282 @@
    ?>
 
 
-<section class="v2_bnc_inside_page">
-   <div class="clearfix"></div>
-   <div class="v2_breadcrumb_main">
-      <div class="container">
-         <h1>Liên Hệ</h1>
-         <ul class="breadcrumb">
-            <li><a href="<?=HOME?>">Trang chủ</a></li>
-            <li><a href="lienhe">Liên Hệ</a></li>
-            <li><a href="<?=HOME?>"><?=$thongtin[0]['value']?></a></li>
-         </ul>
-      </div>
-   </div>
+<section id="wrapper-content" class="wrapper-content">
+            <div class="title-container">
+                <div class="title">
+                    <h3 class="heading" style="color:#0dc0c0;">Liên hệ</h3>
 
-  <!--================Contact Area =================-->
-  <section class="contact_area section_gap_bottom">
-    <div class="container">
-      <div id="mapBox1" class="mapBox">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.0859130033664!2d105.86366231540198!3d20.989192994502723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac1a22f105eb%3A0x5105c4650ab0cba7!2zODcgTMSpbmggTmFtLCBNYWkgxJDhu5luZywgSG_DoG5nIE1haSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1590140877235!5m2!1svi!2s" width=100% height="420" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-      </div>
-      <div class="clearfix"></div>
+                    <nav class="bread-crumbs" style="color:#0dc0c0;">
+                        <ul>
+                            <li><a href="<?=HOME?>" style="color:#0dc0c0 !important;">Trang chủ</a></li>
 
-      <div class="row" style="margin-top: 20px;">
-        <div class="col-lg-3">
-          <div class="v2_bnc_footer_info_company widget-bottom">
-                  <div style="text-align: center;"><strong style="color: rgb(0, 0, 128); font-size: 20px;"><?=$thongtin[0]['value']?></strong></div>
-                  <div style="text-align: center;"><strong><span style="font-size:14px;"><span style="color:rgb(0, 0, 205);">Đc: <?=$thongtin[1]['value']?><br  />
-                     ĐT:</span><span style="color:rgb(255, 0, 0);"> </span><span style="text-align: justify;"><a href="tel:<?=$thongtin[2]['value']?>"><span style="color:rgb(255, 0, 0);"><?=$thongtin[2]['value']?></span></a></span><span style="color:rgb(255, 0, 0);"> - </span><a href="tel:<?=$thongtin[8]['value']?>"><span style="color:rgb(255, 0, 0);"><?=$thongtin[8]['value']?></span></a><br  />
-                     
-                  </div>
-                  <div style="text-align: center;"><strong><span style="font-size:14px;"><span style="color:rgb(0, 0, 205);">Email: </span><a href="mailto:<?=$thongtin[3]['value']?>"><span style="color:rgb(0, 0, 205);"><?=$thongtin[3]['value']?></span></a><br  />
-                     <span style="color:rgb(0, 0, 205);">Website: </span><a href="<?=HOME?>"><span style="color:rgb(0, 0, 205);"><?=HOME?></span></a><span style="color:rgb(0, 0, 205);"> </strong>
-                  </div>
-               </div>
-        </div>
 
-        <div class="col-lg-9">
-          <form class="row contact_form" action="" method="post">
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Tên của bạn" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên của bạn'" required="">
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email của bạn" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" required="">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Nội dung quan tâm" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nội dung quan tâm'">
-              </div>
+
+                            <li>/</li>
+                            <li><span class="current"><a href="lienhe" style="color:#0dc0c0 !important;">Liên hệ</a></span></li>
+
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Tin nhắn" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tin nhắn'"></textarea>
-              </div>
+
+            <section id="layers-widget-map-13" class="widget layers-contact-widget row content-vertical-massive layers-contact-widget map-lh  no-inset-top no-inset-bottom">
+
+                <div class="row  ">
+
+                    <div class="column no-push-bottom span-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.0771557080343!2d105.8633265147625!3d20.989544086019563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac1a16fe7a6d%3A0x9d47c88403545a37!2zODcgTMSpbmggTmFtLCBNYWkgxJDhu5luZywgSG_DoG5nIE1haSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1602230827340!5m2!1svi!2s" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="layers-widget-column-38" class="widget layers-content-widget row content-vertical-massive lien-he-form ">
+                <div class="row container list-grid">
+
+                    <div id="layers-widget-column-38-289" class="layers-masonry-column layers-widget-column-289 span-6  column form-contact">
+
+                        <div class="media image-top medium">
+
+                            <div class="media-body text-left">
+                                <h5 class="heading">
+                                    Liên Hệ Với Chúng Tôi </h5>
+                                <div class="excerpt">
+                                    <!-- <div role="form" class="wpcf7" id="wpcf7-f690-o1" lang="vi" dir="ltr"> -->
+                                        <div class="screen-reader-response"></div>
+                                        <form action="" method="post" class="wpcf7-form" >
+                                            
+                                            <div class="">
+                                                <div class="column span-6">
+                                                    <p>
+                                                        <span class="wpcf7-form-control-wrap your-name"><input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ tên *" required /></span>                                                        </p>
+                                                </div>
+                                                <div class="column span-6">
+                                                    <p>
+                                                        <span class="wpcf7-form-control-wrap your-email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email *" required /></span>                                                        </p>
+                                                </div>
+                                            </div>
+                                            <div class="column span-12">
+                                                <p>
+                                                    <span class="wpcf7-form-control-wrap your-subject"><input type="text" name="subject" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Tiêu đề *" /></span>                                                    </p>
+                                            </div>
+                                            <div class="column span-12">
+                                                <p>
+                                                    <span class="wpcf7-form-control-wrap your-message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Nội dung"></textarea></span>                                                    </p>
+                                            </div>
+                                            <div class="column span-12 gui">
+                                                <p><input type="submit" value="Gửi" name="btngui" class="wpcf7-form-control wpcf7-submit" /></p>
+                                            </div>
+                                            
+                                        </form>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layers-widget-column-38-185" class="layers-masonry-column layers-widget-column-185 span-6  column address-page">
+
+                        <div class="media image-top medium">
+
+                            <div class="media-body text-left">
+                                <h5 class="heading">
+                                    Giờ Khám </h5>
+                                <div class="excerpt">
+                                    <div class="schedual-wrap">
+                                        <div class="schedual-box"><i class="mcare-flaticon-healthy3"></i>
+                                            <h4>Chuyên Gia Tim Mạch<br /> Bác sĩ Minh</h4>
+                                            <div class="schedual-time"><em class="ion-ios-stopwatch-outline"></em>Thứ 2 &#8211; Thứ 6 <br /> 10:00 AM -7:00 PM</div>
+                                        </div>
+                                        <div class="schedual-box"><i class="mcare-flaticon-dental-care"></i>
+                                            <h4>Chuyên Gia Tim Mạch<br /> Bác sĩ Hiếu</h4>
+                                            <div class="schedual-time"><em class="ion-ios-stopwatch-outline"></em>Thứ 5 &#8211; Chủ Nhật <br /> 10:00 AM -7:00 PM</div>
+                                        </div>
+                                        <div class="schedual-box"><i class="mcare-flaticon-medical28"></i>
+                                            <h4>Chuyên Gia Tim Mạch<br />Bác sĩ Hải</h4>
+                                            <div class="schedual-time"><em class="ion-ios-stopwatch-outline"></em>Thứ 3 &#8211; Chủ Nhật <br /> 10:00 AM -7:00 PM</div>
+                                        </div>
+                                        <div class="schedual-box"><i class="mcare-flaticon-ear"></i>
+                                            <h4>Chuyên Gia Tim Mạch<br />Bác sĩ Thi</h4>
+                                            <div class="schedual-time"><em class="ion-ios-stopwatch-outline"></em>Thứ 4 &#8211; Thứ 7 <br /> 10:00 AM -7:00 PM</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="layers-widget-column-52" class="widget layers-content-widget row content-vertical-massive contact-info ">
+                <div class="container clearfix">
+                    <div class="section-title clearfix medium text-center ">
+                        <h3 class="heading">Thông Tin Liên Hệ</h3>
+                    </div>
+                </div>
+                <div class="row container list-grid">
+
+                    <div id="layers-widget-column-52-362" class="layers-masonry-column layers-widget-column-362 span-3  column one">
+
+                        <div class="media image-top medium">
+
+                            <div class="media-body text-center">
+                                <h5 class="heading">
+                                    Địa Chỉ </h5>
+                                <div class="excerpt">
+                                    <p><?=$thongtin[1]['value']?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layers-widget-column-52-356" class="layers-masonry-column layers-widget-column-356 span-3  column two">
+
+                        <div class="media image-top medium">
+
+                            <div class="media-body text-center">
+                                <h5 class="heading">
+                                    Email </h5>
+                                <div class="excerpt">
+                                    <p><?=$thongtin[3]['value']?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layers-widget-column-52-272" class="layers-masonry-column layers-widget-column-272 span-3  column three">
+
+                        <div class="media image-top medium">
+
+                            <div class="media-body text-center">
+                                <h5 class="heading">
+                                    Điện Thoại </h5>
+                                <div class="excerpt">
+                                    <p><?=$thongtin[2]['value']?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layers-widget-column-52-84" class="layers-masonry-column layers-widget-column-84 span-3  column foure">
+
+                        <div class="media image-top medium">
+
+                            <div class="media-body text-center">
+                                <h5 class="heading">
+                                    Website </h5>
+                                <div class="excerpt">
+                                    <p><?=HOME?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="lcam-contents-widget-section widget row content-vertical-massive lcam-widget lcam-contents-widget logo-lien-ket " id="layers-widget-lcam_contents-15">
+
+                <!-- set overlay section -->
+
+
+                <div class="lcam-contents-widget-container lcam-widget-container container">
+                    <div class="lcam-carousel-container" data-mode="horizontal" data-speed="500" data-maxslides="4" data-moveslides="1" data-slidemargin="0" data-randomstart=false data-adaptiveheight=false data-adaptiveHeightspeed="0" data-touchenabled=true data-auto=false
+                        data-pause="4000" data-autohover=false data-autodelay="0" data-ticker=false data-tickerhover=true>
+                        <ul class="lcam-carousel">
+                            <li>
+                                <div id="layers-widget-lcam_contents-15-261" class="lcam-consingle-default has-image">
+
+
+                                    <div class="media no-push-bottom image-top medium">
+
+                                        <!-- Featured image -->
+                                        <div class="media-image ">
+                                            <img width="161" height="40" src="template/wp-content/uploads/2016/08/logo4.png" class="attachment-full" alt="logo4" /> </div>
+
+                                        <!-- Media body -->
+
+
+                                    </div>
+                                    <!-- .media -->
+
+                                </div>
+                                <!-- .lcam-consingle -->
+                            </li>
+                            <li>
+                                <div id="layers-widget-lcam_contents-15-946" class="lcam-consingle-default has-image">
+
+
+                                    <div class="media no-push-bottom image-top medium">
+
+                                        <!-- Featured image -->
+                                        <div class="media-image ">
+                                            <img width="162" height="40" src="template/wp-content/uploads/2016/08/logo3.png" class="attachment-full" alt="logo3" /> </div>
+
+                                        <!-- Media body -->
+
+
+                                    </div>
+                                    <!-- .media -->
+
+                                </div>
+                                <!-- .lcam-consingle -->
+                            </li>
+                            <li>
+                                <div id="layers-widget-lcam_contents-15-451" class="lcam-consingle-default has-image">
+
+
+                                    <div class="media no-push-bottom image-top medium">
+
+                                        <!-- Featured image -->
+                                        <div class="media-image ">
+                                            <img width="156" height="40" src="template/wp-content/uploads/2016/08/logo2.png" class="attachment-full" alt="logo2" /> </div>
+
+                                        <!-- Media body -->
+
+
+                                    </div>
+                                    <!-- .media -->
+
+                                </div>
+                                <!-- .lcam-consingle -->
+                            </li>
+                            <li>
+                                <div id="layers-widget-lcam_contents-15-594" class="lcam-consingle-default has-image">
+
+
+                                    <div class="media no-push-bottom image-top medium">
+
+                                        <!-- Featured image -->
+                                        <div class="media-image ">
+                                            <img width="161" height="40" src="template/wp-content/uploads/2016/08/logo1.png" class="attachment-full" alt="logo1" /> </div>
+
+                                        <!-- Media body -->
+
+
+                                    </div>
+                                    <!-- .media -->
+
+                                </div>
+                                <!-- .lcam-consingle -->
+                            </li>
+                        </ul>
+                        <div class="lcam-carousel-controller-center-hover">
+                            <button id="#layers-widget-lcam_contents-15-prev" class="lcam-carousel-to-prev"><i class="fa fa-caret-left"></i></button>
+                            <button id="#layers-widget-lcam_contents-15-next" class="lcam-carousel-to-next"><i class="fa fa-caret-right"></i></button>
+                        </div>
+                    </div>
+                    <!-- .lcam-carousel-container -->
+                </div>
+                <!-- .row -->
+            </section>
+            <!-- .lcam-widget-section -->
+
+
+            <div id="back-to-top">
+                <a href="#top">Đầu trang</a>
             </div>
-            <div class="col-md-12 text-right">
-              <button type="submit" value="submit" name="btngui" class="btn btn-success">Gửi</button>
-              <!-- <button type="submit" value="submit" class="primary-btn" name="btngui">Gửi</button> -->
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-    </section>
+            <!-- back-to-top -->
+
+        </section>

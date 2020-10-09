@@ -1,29 +1,49 @@
 <?php 
 	$gioithieu=$data->gioithieu(14);
  ?>
-<section class="v2_bnc_inside_page">
-   <div class="clearfix"></div>
-   <div class="v2_breadcrumb_main">
-      <div class="container">
-         <h1>Giới thiệu</h1>
-         <ul class="breadcrumb">
-            <li><a href="<?=HOME?>">Trang chủ</a></li>
-            <li><a href="about">Giới thiệu</a></li>
-            <li><a href="<?=HOME?>"><?=$thongtin[0]['value']?></a></li>
-         </ul>
-      </div>
-   </div>
-   <div class="v2_bnc_about_details padding-top-20 padding-bottom-20">
-      <div class="container">
-         <div class="v2_bnc_news_details_title">
-            <h1><?=$thongtin[0]['value']?></h1>
-         </div>
-         <time class="v2_bnc_create_time"> <i class="fa fa-calendar-o"></i> Ngày đăng : <?=date('d/m/Y',strtotime($gioithieu['updated']));?> </time>
-         <div class="v2_bnc_news_details_post">
-            <?php echo $gioithieu['noi_dung']; ?>
-         </div>
-         
-      </div>
-   </div>
-   </div>
-</section>
+  <section id="wrapper-content" class="wrapper-content">
+            <div class="title-container">
+                <div class="title">
+                    <h3 class="heading" style="color:#0dc0c0;">Giới thiệu</h3>
+
+                    <nav class="bread-crumbs" style="color:#0dc0c0;">
+                        <ul>
+                            <li><a href="<?=HOME?>" style="color:#0dc0c0 !important;">Trang chủ</a></li>
+
+
+
+                            <li>/</li>
+                            <li><span class="current"><a href="about" style="color:#0dc0c0 !important;">Giới thiệu</a></span></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <section id="post-473" class="container content-main clearfix ádasdas post-473 page type-page status-publish hentry">
+                <div class="row">
+                    <article class="column span-12">
+                        <header class="section-title large" style="text-align:center;">
+                            <h1 class="heading">TẦM NHÌN VÀ SỨ MỆNH</h1>
+                        </header>
+
+                        <div class="story">
+
+                            <p style="text-align: justify;">
+                            <?=$gioithieu['noi_dung']?>
+                           </p>
+
+
+                        </div>
+
+
+                    </article>
+                </div>
+            </section>
+
+
+            <div id="back-to-top">
+                <a href="#top">Đầu trang</a>
+            </div>
+            <!-- back-to-top -->
+
+        </section>

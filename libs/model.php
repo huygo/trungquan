@@ -16,6 +16,7 @@ class model
         define("dathang", '1_dathang');
         define("khachhang", 'khachhang');
         define("nhanvien", 'nhanvien');
+        define("banner", 'banner');
     }
 
     //------------------- các hàm thao tác trên database ---------------
@@ -54,6 +55,13 @@ class model
     function topmenu()
     {
         $dieukien = " WHERE tinh_trang=1 AND cha=0 ";
+        $query = $this->db->query("SELECT * FROM " . menu . " $dieukien  ORDER BY thu_tu ");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    function menucon($cha)
+    {
+        $dieukien = " WHERE tinh_trang=1 AND cha=$cha ";
         $query = $this->db->query("SELECT * FROM " . menu . " $dieukien  ORDER BY thu_tu ");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
