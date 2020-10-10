@@ -127,14 +127,16 @@
                     <div id="layers-widget-column-43-267" class="layers-masonry-column layers-widget-column-267 span-3  column  has-image">
                         <div class="media image-top medium">
                             <div class="media-image ">
-                                <img width="64" height="64" src="template/wp-content/uploads/2016/11/dieu-duong1.png" class="attachment-medium" alt="dieu-duong" />
+                                <img width="64" height="64" src="template/wp-content/uploads/2016/11/hihi.png" class="attachment-medium"  />
                             </div>
                             <div class="media-body text-center">
                                 <h5 class="heading">
-                                    Điều dưỡng
+                                     TELEMARKETING & TELESALE
                                 </h5>
                                 <div class="excerpt">
-                                    <p>Đội ngũ điều dưỡng tận tâm, chu đáo với nhiều năm kinh nghiệm trong lĩnh vực chuyên ngành </p>
+                                    <p>Là dịch vụ gọi điện khai thác tìm kiếm khách hàng tiềm năng quan tâm đến dịch vụ, sản phẩm. Gọi điện tới khách hàng tư vấn, bán hàng (gọi tắt là “chốt sales”)
+                                Có cam kết KPI sau thời gian chạy test.
+                                </p>
                                 </div>
                             </div>
                         </div>
@@ -142,14 +144,14 @@
                     <div id="layers-widget-column-43-438" class="layers-masonry-column layers-widget-column-438 span-3  column  has-image">
                         <div class="media image-top medium">
                             <div class="media-image ">
-                                <img width="64" height="64" src="template/wp-content/uploads/2016/11/kham-benh1.png" class="attachment-medium" alt="kham-benh" />
+                                <img width="64" height="64" src="template/wp-content/uploads/2016/11/fast.png" class="attachment-medium" alt="kham-benh" />
                             </div>
                             <div class="media-body text-center">
                                 <h5 class="heading">
-                                    Khám Bệnh
+                                         F.A.S.T CONTACT CENTER
                                 </h5>
                                 <div class="excerpt">
-                                    <p>Cung cấp các dịch vụ chăm sóc sức khỏe và phòng ngừa bệnh toàn diện</p>
+                                    <p>Là dịch vụ cho phép thiết lập nhanh một tổng đài (Contact Center) phục vụ những chiến dịch tiếp nhận/gọi ra trong một khoảng thời gian ngắn (thường dưới 1 tháng).</p>
                                 </div>
                             </div>
                         </div>
@@ -157,14 +159,14 @@
                     <div id="layers-widget-column-43-401" class="layers-masonry-column layers-widget-column-401 span-3  column  has-image">
                         <div class="media image-top medium">
                             <div class="media-image ">
-                                <img width="64" height="64" src="template/wp-content/uploads/2016/11/dich-vu-cap-cuu2.png" class="attachment-medium" alt="dich-vu-cap-cuu" />
+                                <img width="64" height="64" src="template/wp-content/uploads/2016/11/sms.png" class="attachment-medium" alt="dich-vu-cap-cuu" />
                             </div>
                             <div class="media-body text-center">
                                 <h5 class="heading">
-                                    Dịch Vụ Cấp Cứu
+                                SMS MARKETING
                                 </h5>
                                 <div class="excerpt">
-                                    <p>Khoa Cấp cứu hoạt động 24/24 vào tất cả các ngày trong tuần, kể cả thứ 7 – Chủ nhật.</p>
+                                    <p>Gửi tin nhắn trực tiếp đến điện thoại khách hàng,Tỉ lệ mở và đọc tin nhắn cao đến 99%.</p>
                                 </div>
                             </div>
                         </div>
@@ -172,14 +174,14 @@
                     <div id="layers-widget-column-43-151" class="layers-masonry-column layers-widget-column-151 span-3  column  has-image">
                         <div class="media image-top medium">
                             <div class="media-image ">
-                                <img width="64" height="64" src="template/wp-content/uploads/2016/11/xet-nghiem1.png" class="attachment-medium" alt="xet-nghiem" />
+                                <img width="64" height="64" src="template/wp-content/uploads/2016/11/email.png" class="attachment-medium" alt="xet-nghiem" />
                             </div>
                             <div class="media-body text-center">
                                 <h5 class="heading">
-                                    Xét Nghiệm
+                                EMAIL MAKETTING
                                 </h5>
                                 <div class="excerpt">
-                                    <p>Khoa Xét nghiệm sở hữu những máy móc tự động, tối tân nhất, chất lượng nhất .</p>
+                                    <p>Email marketing là hình thức sử dụng email (thư điện tử) mang nội dung về thông tin/bán hàng/tiếp thị/giới thiệu sản phẩm đến khách hàng mà mình mong muốn. Mỗi email được gửi đến khách hàng tiềm năng hoặc khách hàng hiện tại có thể coi là email marketing.</p>
                                 </div>
                             </div>
                         </div>
@@ -191,15 +193,15 @@
                     <li id="layers-widget-hero_slider_column_hero-5-584" class="selected">
                         <div class="cd-full-width text-left">
                             <h5 class="heading">
-                                Để có cuộc sống khỏe mạnh hơn
+                                Để có hiệu quả kinh doanh tốt hơn
                             </h5>
                             <div class="excerpt">
                                 <h2>XIN VUI LÒNG liên hệ với chúng tôi</h2>
                             </div>
-                            <a data-scrollx href="http://7289.chilishop.net/lien-he/" class="cd-btn scroll primary  btn-medium">XEM XÊM</a>
+                            <a data-scrollx href="lienhe" class="cd-btn scroll primary  btn-medium">XEM XÊM</a>
                         </div>
                         <!-- .cd-half-width -->
-                        <div class="cd-bg-video-wrapper" data-video="http://7289.chilishop.net/template/wp-content/uploads/2016/08/ocean">
+                        <div class="cd-bg-video-wrapper" data-video="https://www.youtube.com/watch?v=VeqfEdXN1oc&ab_channel=MixesMusic">
                             <!-- video element will be loaded using jQuery -->
                         </div>
                         <!-- .cd-bg-video-wrapper -->
@@ -218,10 +220,11 @@
             <section class="widget row team-vertical-massive nhan-su " id="layers-widget-layers_plus_column_team-5">
                 <div class="container clearfix">
                     <div class="section-title clearfix medium text-center ">
-                        <h3 class="heading">Bác Sĩ Của Chúng Tôi</h3>
+                        <h3 class="heading">Đội ngũ của chúng tôi</h3>
                     </div>
                 </div>
                 <div class="row container list-grid">
+                <?php for ($i=1; $i <=4 ; $i++) { ?>
                     <div id="layers-widget-layers_plus_column_team-5-34" class="layers-masonry-column layers-plus span-3  column team has-image">
                         <div class="media invert image-top medium">
                             <div class="media-image ">
@@ -229,7 +232,7 @@
                             </div>
                             <div class="media-body text-center">
                                 <h5 class="heading">
-                                    Trương Mỹ Tuyết
+                                    Lò Thế Quỳnh
                                 </h5>
                                 <div class="excerpt designation">Khoa ngoại thần kinh</div>
                                 <div class="excerpt">
@@ -237,87 +240,18 @@
                                 </div>
                                 <div class="excerpt ">
                                     <ul class="team-social style1">
-                                        <li><a href="facebook.html"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="tiwtter.html"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="google.com.html"><span class="fa fa-google-plus"></span></a></li>
-                                        <li><a href="linkedin.html"><span class="fa fa-linkedin"></span></a></li>
+                                        <li><a href="facebook.com"><span class="fa fa-facebook"></span></a></li>
+                                        <li><a href="tiwtter.com"><span class="fa fa-twitter"></span></a></li>
+                                        <li><a href="google.com"><span class="fa fa-google-plus"></span></a></li>
+                                        <li><a href="linkedin.com"><span class="fa fa-linkedin"></span></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="layers-widget-layers_plus_column_team-5-410" class="layers-masonry-column layers-plus span-3  column team has-image">
-                        <div class="media invert image-top medium">
-                            <div class="media-image ">
-                                <img width="237" height="325" src="template/wp-content/uploads/2016/08/dt2.jpg" class="attachment-medium" alt="dt2" />
-                            </div>
-                            <div class="media-body text-center">
-                                <h5 class="heading">
-                                    Nguyễn Hoàng Minh
-                                </h5>
-                                <div class="excerpt designation">Khoa cấp cứu</div>
-                                <div class="excerpt">
-                                    <p>Chuyên khoa cấp cứu nhiệt tình, tận tâm trong công việc với nhiều năm kinh nghiệm trong lĩnh vực.</p>
-                                </div>
-                                <div class="excerpt ">
-                                    <ul class="team-social style1">
-                                        <li><a href="facebook.html"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="tiwtter.html"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="google.com.html"><span class="fa fa-google-plus"></span></a></li>
-                                        <li><a href="linkedin.html"><span class="fa fa-linkedin"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="layers-widget-layers_plus_column_team-5-905" class="layers-masonry-column layers-plus span-3  column team has-image">
-                        <div class="media invert image-top medium">
-                            <div class="media-image ">
-                                <img width="237" height="325" src="template/wp-content/uploads/2016/08/dt3.jpg" class="attachment-medium" alt="dt3" />
-                            </div>
-                            <div class="media-body text-center">
-                                <h5 class="heading">
-                                    Nguyễn Thi
-                                </h5>
-                                <div class="excerpt designation">Khoa xét nghiệm</div>
-                                <div class="excerpt">
-                                    <p>Chuyên khoa xét nghiệm đã giúp rất nhiều người phát hiện ra bệnh và kịp thời điều trị.</p>
-                                </div>
-                                <div class="excerpt ">
-                                    <ul class="team-social style1">
-                                        <li><a href="facebook.html"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="tiwtter.html"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="google.com.html"><span class="fa fa-google-plus"></span></a></li>
-                                        <li><a href="linkedin.html"><span class="fa fa-linkedin"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="layers-widget-layers_plus_column_team-5-79" class="layers-masonry-column layers-plus span-3 last  column team has-image">
-                        <div class="media invert image-top medium">
-                            <div class="media-image ">
-                                <img width="237" height="325" src="template/wp-content/uploads/2016/08/dt4.jpg" class="attachment-medium" alt="dt4" />
-                            </div>
-                            <div class="media-body text-center">
-                                <h5 class="heading">
-                                    Trần Hữu Hiền
-                                </h5>
-                                <div class="excerpt designation">Khoa nội</div>
-                                <div class="excerpt">
-                                    <p>Với 12 năm kinh nghiệm trong việc trong khoa nội, đã giúp nhiều bệnh nhân thoát khỏi cơn nguy kịch.</p>
-                                </div>
-                                <div class="excerpt ">
-                                    <ul class="team-social style1">
-                                        <li><a href="facebook.html"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="tiwtter.html"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="google.com.html"><span class="fa fa-google-plus"></span></a></li>
-                                        <li><a href="linkedin.html"><span class="fa fa-linkedin"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <?php } ?>
+                    
+                    
                 </div>
             </section>
             <section class="widget row gridmaker-vertical-massive bo-cuc-trang " id="layers-widget-layers_plus_column_gridmaker-3">

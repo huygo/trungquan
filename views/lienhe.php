@@ -94,7 +94,7 @@
 
                             <div class="media-body text-left">
                                 <h5 class="heading">
-                                    Giờ Khám </h5>
+                                    Dịch Vụ </h5>
                                 <div class="excerpt">
                                     <div class="schedual-wrap">
                                         <div class="schedual-box"><i class="mcare-flaticon-healthy3"></i>
