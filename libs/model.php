@@ -81,9 +81,7 @@ class model
         if ($url[0] == 'blog')
             if (sizeof($url) == 2) {
                 $query = $this->db->query("SELECT *,
-                   (SELECT name FROM admin WHERE id=author) AS nhanvien,
-                   (SELECT name FROM danhmuc WHERE id=danh_muc) AS danhmuc,
-                   (SELECT url FROM danhmuc WHERE id=danh_muc) AS danhmucurl
+                   (SELECT name FROM danhmuc WHERE id=danh_muc) AS danhmuc
                    FROM " . baiviet . " WHERE url='" . $url[1] . "' ");
                 $temp = $query->fetchAll(PDO::FETCH_ASSOC);
                 $page['title'] = $temp[0]['name'];
@@ -91,16 +89,39 @@ class model
                 $page['keywords'] = $temp[0]['tag'];
                 $page['image'] = $temp[0]['hinh_anh'];
                 $page['data'] = $temp[0];
+            }else if (sizeof($url) == 3) {
+               $query = $this->db->query("SELECT * FROM ".danhmuc." WHERE tinh_trang=1 AND url='" . $url[2] . "'  ");
+                $temp = $query->fetchAll(PDO::FETCH_ASSOC);
+                $page['title'] = $temp[0]['name'];
+                $page['description'] = $this->catchuoi($temp[0]['mo_ta'],100);
+                $page['keywords'] = $temp[0]['name'];
+                $danhmucid = $temp[0]['id'];
+                $page['image'] = $temp[0]['hinh_anh'];
+                
+                $trang= $url[1];
+                  
+                  $from= ($trang-1)*6;
+                $query = $this->db->query("SELECT *
+                   FROM " . baiviet . " WHERE tinh_trang=1 AND danh_muc=$danhmucid ORDER BY id DESC LIMIT $from,6 ");
+                $temp = $query->fetchAll(PDO::FETCH_ASSOC);
+                $page['data'] = $temp;
             } else {
-                $query = $this->db->query("SELECT * FROM ".danhmuc." WHERE url='$url[2]' ");
+                $query = $this->db->query("SELECT * FROM ".danhmuc." WHERE tinh_trang=1 AND id!=16 AND id!=17 AND id!=18  ");
                 $temp = $query->fetchAll(PDO::FETCH_ASSOC);
                 $page['title'] = $temp[0]['name'];
                 $page['description'] = $this->catchuoi($temp[0]['mo_ta'],100);
                 $page['keywords'] = $temp[0]['name'];
                 $page['image'] = $temp[0]['hinh_anh'];
-                $danhmucid = $temp[0]['id'];
-                $query = $this->db->query("SELECT id, name, hinh_anh, mo_ta, updated,url
-                   FROM " . baiviet . " WHERE danh_muc=$danhmucid ");
+                if (isset($_GET['p'])) {
+                $trang= $_GET['p'];
+                settype($trang, "int");
+                  }else{
+                    $trang=1;
+                  }
+                  
+                  $from= ($trang-1)*6;
+                $query = $this->db->query("SELECT *
+                   FROM " . baiviet . " WHERE tinh_trang=1 AND danh_muc!=16 AND danh_muc!=17 AND danh_muc!=18 ORDER BY id DESC LIMIT $from,6 ");
                 $temp = $query->fetchAll(PDO::FETCH_ASSOC);
                 $page['data'] = $temp;
             }
@@ -130,9 +151,8 @@ class model
                 $page['image'] = $temp[0]['hinh_anh'];
                 $danhmucid = $temp[0]['id'];
                 $trang=$url[1];
-                $from= ($trang-1)*12;
-                $query = $this->db->query("SELECT id, name, hinh_anh, mo_ta, gia_ban,url,gia_niem_yet
-                   FROM " . sanpham . " WHERE tinh_trang=1 AND danh_muc=$danhmucid LIMIT $from,12 ");
+                $from= ($trang-1)*6;
+                $query = $this->db->query("SELECT *  FROM " . sanpham . " WHERE tinh_trang=1 AND danh_muc=$danhmucid LIMIT $from,6 ");
                 $temp = $query->fetchAll(PDO::FETCH_ASSOC);
                 $page['data'] = $temp;
             }
@@ -170,6 +190,12 @@ class model
     {
         $query = $this->db->query("SELECT *, (SELECT count(1) FROM ".baiviet." WHERE tinh_trang=1 AND danh_muc=a.id) AS total
         FROM " . danhmuc . " a WHERE tinh_trang=1 ");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    function doingu($danhmuc)
+    {
+        $query = $this->db->query("SELECT *  FROM " . baiviet . "  WHERE tinh_trang=1 AND danh_muc=$danhmuc ORDER BY id DESC LIMIT 4 ");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -568,8 +594,8 @@ class model
                 $trang=1;
               }
               
-              $from= ($trang-1)*12;
-     $query = $this->db->query("SELECT * FROM ".sanpham." WHERE tinh_trang = 1 AND (name LIKE '%".$keyword."%' OR mo_ta LIKE '%".$keyword."%' OR noi_dung LIKE '%".$keyword."%') ORDER BY id DESC LIMIT $from,12 ");
+              $from= ($trang-1)*6;
+     $query = $this->db->query("SELECT * FROM ".sanpham." WHERE tinh_trang = 1 AND (name LIKE '%".$keyword."%' OR mo_ta LIKE '%".$keyword."%' OR noi_dung LIKE '%".$keyword."%') ORDER BY id DESC LIMIT $from,6 ");
      if ($query)
        return $query->fetchAll(PDO::FETCH_ASSOC);
      else
@@ -772,6 +798,14 @@ class model
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function getdanhmucall()
+    {
+        $query = $this->db->query("SELECT *,
+        (SELECT COUNT(id) FROM " . baiviet . " WHERE danh_muc=a.id ) AS total
+         FROM " . danhmuc . " a  WHERE tinh_trang=1 AND id!=16 AND id!=17 AND id!=18 ORDER BY id ASC");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function getbaivietfooter($com)
     {
         $query = $this->db->query("SELECT * FROM " . baiviet . " WHERE tinh_trang=1 AND com = $com");
@@ -780,13 +814,55 @@ class model
 
     function getbaiviet()
     {
-        $query = $this->db->query("SELECT id FROM " . baiviet . " WHERE tinh_trang=1");
+        $query = $this->db->query("SELECT id FROM " . baiviet . " WHERE tinh_trang=1 AND danh_muc!=16 AND danh_muc!=17 AND danh_muc!=18 ");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+     function getbaiviet1($danhmuc)
+    {
+        $query = $this->db->query("SELECT id FROM " . baiviet . " WHERE tinh_trang=1 AND danh_muc=$danhmuc ");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+     function getsanpham1($danhmuc)
+    {
+        $query = $this->db->query("SELECT id FROM " . sanpham . " WHERE tinh_trang=1 AND danh_muc=$danhmuc ");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    function lienquan($id,$danhmuc)
+    {
+        $query = $this->db->query("SELECT * FROM " . baiviet . " WHERE tinh_trang=1 AND id!=$id AND danh_muc=$danhmuc AND danh_muc!=16 AND danh_muc!=17 AND danh_muc!=18 ORDER BY id DESC LIMIT 4 ");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    function dvlienquan($id,$danhmuc)
+    {
+        $query = $this->db->query("SELECT * FROM " . sanpham . " WHERE tinh_trang=1 AND id!=$id AND danh_muc=$danhmuc ORDER BY id DESC LIMIT 4 ");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+     function getnoibat()
+    {
+        $query = $this->db->query("SELECT * FROM " . baiviet . " WHERE tinh_trang=1 AND danh_muc!=16 AND danh_muc!=17 AND danh_muc!=18 ORDER BY luot_xem DESC LIMIT 3 ");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    function baiviethome()
+    {
+        $query = $this->db->query("SELECT * FROM " . baiviet . " WHERE tinh_trang=1 AND danh_muc!=16 AND danh_muc!=17 AND danh_muc!=18 ORDER BY id DESC LIMIT 10 ");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    function bvmoi()
+    {
+        $query = $this->db->query("SELECT * FROM " . baiviet . " WHERE tinh_trang=1 AND danh_muc!=16 AND danh_muc!=17 AND danh_muc!=18 ORDER BY id DESC LIMIT 5 ");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
     function getbanner($com)
     {
-        $query = $this->db->query("SELECT * FROM " . banner . " WHERE tinh_trang=1 AND com=$com ORDER BY thu_tu");
+        $query = $this->db->query("SELECT * FROM " . banner . " WHERE tinh_trang=1 AND com=$com ORDER BY thu_tu ASC ");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 

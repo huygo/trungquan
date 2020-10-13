@@ -1,4 +1,5 @@
 <?php
+    $doitac=$data->getbanner(10);
    if (isset($_POST['btngui'])) {
        $name = $_REQUEST['name'];
        $email = $_REQUEST['email'];
@@ -198,82 +199,22 @@
                     <div class="lcam-carousel-container" data-mode="horizontal" data-speed="500" data-maxslides="4" data-moveslides="1" data-slidemargin="0" data-randomstart=false data-adaptiveheight=false data-adaptiveHeightspeed="0" data-touchenabled=true data-auto=false
                         data-pause="4000" data-autohover=false data-autodelay="0" data-ticker=false data-tickerhover=true>
                         <ul class="lcam-carousel">
-                            <li>
-                                <div id="layers-widget-lcam_contents-15-261" class="lcam-consingle-default has-image">
-
-
-                                    <div class="media no-push-bottom image-top medium">
-
-                                        <!-- Featured image -->
-                                        <div class="media-image ">
-                                            <img width="161" height="40" src="template/wp-content/uploads/2016/08/logo4.png" class="attachment-full" alt="logo4" /> </div>
-
-                                        <!-- Media body -->
-
-
-                                    </div>
-                                    <!-- .media -->
-
-                                </div>
-                                <!-- .lcam-consingle -->
-                            </li>
-                            <li>
-                                <div id="layers-widget-lcam_contents-15-946" class="lcam-consingle-default has-image">
-
-
-                                    <div class="media no-push-bottom image-top medium">
-
-                                        <!-- Featured image -->
-                                        <div class="media-image ">
-                                            <img width="162" height="40" src="template/wp-content/uploads/2016/08/logo3.png" class="attachment-full" alt="logo3" /> </div>
-
-                                        <!-- Media body -->
-
-
-                                    </div>
-                                    <!-- .media -->
-
-                                </div>
-                                <!-- .lcam-consingle -->
-                            </li>
-                            <li>
-                                <div id="layers-widget-lcam_contents-15-451" class="lcam-consingle-default has-image">
-
-
-                                    <div class="media no-push-bottom image-top medium">
-
-                                        <!-- Featured image -->
-                                        <div class="media-image ">
-                                            <img width="156" height="40" src="template/wp-content/uploads/2016/08/logo2.png" class="attachment-full" alt="logo2" /> </div>
-
-                                        <!-- Media body -->
-
-
-                                    </div>
-                                    <!-- .media -->
-
-                                </div>
-                                <!-- .lcam-consingle -->
-                            </li>
-                            <li>
-                                <div id="layers-widget-lcam_contents-15-594" class="lcam-consingle-default has-image">
-
-
-                                    <div class="media no-push-bottom image-top medium">
-
-                                        <!-- Featured image -->
-                                        <div class="media-image ">
-                                            <img width="161" height="40" src="template/wp-content/uploads/2016/08/logo1.png" class="attachment-full" alt="logo1" /> </div>
-
-                                        <!-- Media body -->
-
-
-                                    </div>
-                                    <!-- .media -->
-
-                                </div>
-                                <!-- .lcam-consingle -->
-                            </li>
+                            <?php foreach ($doitac as $item) { ?>
+                        <li>
+                           <div id="layers-widget-lcam_contents-15-261" class="lcam-consingle-default has-image">
+                              <div class="media no-push-bottom image-top medium">
+                                 <!-- Featured image -->
+                                 <div class="media-image ">
+                                    <img width="161" height="40" src="<?=$item['hinh_anh']?>" class="attachment-full" alt="logo4" />                     
+                                 </div>
+                                 <!-- Media body -->
+                              </div>
+                              <!-- .media -->
+                           </div>
+                           <!-- .lcam-consingle -->
+                        </li>
+                       <?php } ?>
+                            
                         </ul>
                         <div class="lcam-carousel-controller-center-hover">
                             <button id="#layers-widget-lcam_contents-15-prev" class="lcam-carousel-to-prev"><i class="fa fa-caret-left"></i></button>

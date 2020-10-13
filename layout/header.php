@@ -176,7 +176,7 @@
                         <a href="<?=$value['url']?>"><?=$value['name']?></a>
                         <ul class="sub-menu">
                         <?php foreach ($menucon as $item) {  ?>
-                            <li id="menu-item-<?=$item['id']?>" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-<?=$item['id']?>"><a href="<?=$item['url']?>"><?=$item['name']?></a></li>
+                            <li id="menu-item-<?=$item['id']?>" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-<?=$item['id']?>"><a href="product/1/<?=$item['url']?>"><?=$item['name']?></a></li>
                         <?php } ?>
                         </ul>
                     </li>
@@ -221,7 +221,7 @@
                             <a href="<?=$value['url']?>"><?=$value['name']?></a>
                             <ul class="sub-menu">
                             <?php foreach ($menucon as $item) { ?>
-                                <li id="menu-item-705" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-705"><a href="<?=$item['url']?>"><?=$item['name']?></a></li>
+                                <li id="menu-item-705" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-705"><a href="product/1/<?=$item['url']?>"><?=$item['name']?></a></li>
                             <?php } ?>
                                 
                             </ul>
@@ -244,7 +244,7 @@
                            <input type="search" class="search-field" placeholder="Tìm kiếm &hellip;" value="" name="key" title="Bạn muốn tìm gì:" />
                            </label>
                                 <input type="submit" class="search-submit" value="Tìm kiếm" />
-                                <input type='hidden' name='lang' value='vi' />
+                               
                             </form>
                         </div>
                     </div>

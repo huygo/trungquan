@@ -13,6 +13,7 @@
   require 'libs/functions.php';
   require 'libs/bootstrap.php';
   require 'libs/Mailin.php';
+  require 'libs/convert.php';
   $app = new bootstrap();
 // }
 ?>

@@ -1,3 +1,6 @@
+<?php
+    $baivietmoi=$data->bvmoi();
+?>
 <footer id="footer" class="footer-site invert">
             <div class="container  clearfix">
                 <div class="row">
@@ -46,21 +49,11 @@
                         <section id="recent-posts-8" class="widget widget_recent_entries">
                             <h5 class="section-nav-title">Bài viết mới</h5>
                             <ul>
+                                <?php foreach ($baivietmoi as $value) { ?>
                                 <li>
-                                    <a href="benh-nhi-nho-tuoi-nhat-the-gioi-duoc-ghep-gan-dao-chieu/index.html">Bệnh nhi nhỏ tuổi nhất thế giới được ghép gan</a>
+                                    <a href="blog/<?=$value['url']?>"><?=$value['name']?></a>
                                 </li>
-                                <li>
-                                    <a href="nghien-cuu-vaccin-nho-mui-phong-benh-do-chlamydia/index.html">Nghiên cứu vaccin nhỏ mũi phòng bệnh do Chlamydia</a>
-                                </li>
-                                <li>
-                                    <a href="xet-nghiem-chuan-doan/index.html">Xét nghiệm &#8211; chuẩn đoán</a>
-                                </li>
-                                <li>
-                                    <a href="kham-lam-san/index.html">Khám lâm sàn</a>
-                                </li>
-                                <li>
-                                    <a href="dich-vu-sinh/index.html">Dịch vụ sinh</a>
-                                </li>
+                               <?php } ?>
                             </ul>
                         </section>
                     </div>

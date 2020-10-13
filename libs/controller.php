@@ -5,14 +5,16 @@ $url  = explode('/', $thisurl);
 $data = new model();
 if ($url[0]!='') {
     if ($url[0]=='blog')
-        if (sizeof($url)==3)
+        if (sizeof($url)==1)
             $view = 'danhmuc';
-        else
+        else if (sizeof($url)==3) {
+            $view = 'blog';
+        }else
             $view = 'baiviet';
     elseif ($url[0]=='product')
         if (sizeof($url)==3)
             $view = 'danhmucsp';
-        else
+        else 
             $view = 'sanpham';
     else
          $view = $url[0];

@@ -1,31 +1,17 @@
 <?php
-    if (isset($_REQUEST['key']) && $_REQUEST['key']!='') {
-         $keyword = $_REQUEST['key'];
-    }else{
-        $keyword = 'Chưa nhập từ khóa tìm kiếm';
-    }
-    $search = $data->search_post($keyword);
-    $search1 = $data->search_post1($keyword);
-    $noibat=$data->getnoibat();
+   $baiviet1=$data->getbaiviet1($page['data'][0]['danh_muc']);
+   $noibat=$data->getnoibat();
    $danhmuc=$data->getdanhmucall();
    $hoidap=$data->doingu(17);
- 
-   $tongbv= count($search1);
-  
-  $sotrang=ceil($tongbv/6);
-  if (isset($_GET['p'])) {
-                $trang= $_GET['p'];
-                settype($trang, "int");
-  }else{
-        $trang=1;
-  }
-  
-   
-   ?>
+   $baiviet=$page['data'];
+   $tongbv= count($baiviet1);
+     $sotrang=ceil($tongbv/6);
+      $trang= $url[1];
+?>
 <section id="wrapper-content" class="wrapper-content">
              <div class="title-container">
                 <div class="title">
-                    <h3 class="heading" style="color:#0dc0c0;">Tìm kiếm</h3>
+                    <h3 class="heading" style="color:#0dc0c0;">Bài viết</h3>
 
                     <nav class="bread-crumbs" style="color:#0dc0c0;">
                         <ul>
@@ -34,7 +20,7 @@
 
 
                             <li>/</li>
-                            <li><span class="current"><a style="color:#0dc0c0 !important;">Tìm kiếm: <?=$keyword?></a></span></li>
+                            <li><span class="current"><a href="blog/1/<?=$url[2]?>" style="color:#0dc0c0 !important;"><?=$page['title']?> </a></span></li>
 
                         </ul>
                     </nav>
@@ -42,15 +28,15 @@
             </div>
             <section class="container content-main archive clearfix">
                <div class="column span-8">
-                  <?php foreach ($search as $value) { ?>
+                  <?php foreach ($baiviet as $value) { ?>
                   <article id="post-688" class="post-news-item span-6 column post-688 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc">
                      <div class="title-category">
                         <div class='date'><span class='day'> <?php echo date('d/m',strtotime($value['ngay_dang'])); ?></span><span class='year'><?php echo date('Y',strtotime($value['ngay_dang'])); ?></span></div>
                      </div>
-                     <div class="thumbnail push-bottom"><a href="product/<?=$value['url']?>"><img width="615" height="409" src="<?=$value['hinh_anh']?>" class="attachment-large" alt="<?=$value['name']?>" /></a></div>
+                     <div class="thumbnail push-bottom"><a href="blog/<?=$value['url']?>"><img width="615" height="409" src="<?=$value['hinh_anh']?>" class="attachment-large" alt="<?=$value['name']?>" /></a></div>
                      <div class="post-content">
                         <header class="article-title">
-                           <h2 class="heading"><a href="product/<?=$value['url']?>"><?=$value['name']?></a></h2>
+                           <h2 class="heading"><a href="blog/<?=$value['url']?>"><?=$value['name']?></a></h2>
                         </header>
                         <div class="copy">
                            <p class="excerpt"><?=$value['mo_ta']?></p>
@@ -60,7 +46,7 @@
                         </meta-info> -->
                      </div>
                      <div class="button-post">
-                        <div class="readmore"><a href="product/<?=$value['url']?>" class="button">Xem thêm</a></div>
+                        <div class="readmore"><a href="blog/<?=$value['url']?>" class="button">Xem thêm</a></div>
                         <div class="doc-social-wrap">
                            <i class="ion-android-share-alt share-social share-toggle"></i>
                            <ul class="doc-social share">
@@ -81,18 +67,18 @@
                      <h2 class="screen-reader-text">Điều hướng các bài viết</h2>
                      <div class="nav-links">
                         <?php if ($trang>1 && $sotrang>1) {
-                           echo '<a class="prev page-numbers" href="search?key='.$keyword.'&p='.($trang-1).'">Trước</a>';
+                           echo '<a class="prev page-numbers" href="blog/'.($trang-1).'/'.$url[2].'">Trước</a>';
                         } ?>
                         
                         <?php for ($t=1; $t<=$sotrang ; $t++) { ?>
                         <?php if ($t==$trang) {
                            echo '<span class="page-numbers current">'.$t.'</span>';
                         }else{
-                           echo '<a class="page-numbers" href="search?key='.$keyword.'&p='.$t.'">'.$t.'</a>';
+                           echo '<a class="page-numbers" href="blog/'.$t.'/'.$url[2].'">'.$t.'</a>';
                         } ?>
                         <?php } ?>
                         <?php if ($trang<$sotrang) {
-                           echo '<a class="next page-numbers" href="search?key='.$keyword.'&p='.($trang+1).'">Tiếp theo</a>';
+                           echo '<a class="next page-numbers" href="blog/'.($trang+1).'/'.$url[2].'">Tiếp theo</a>';
                         } ?>
                         
                         
@@ -106,7 +92,7 @@
                      <ul class="wpp-list">
                         <?php foreach ($noibat as $value) { ?>
                         <li>
-                           <a href="product/<?=$value['url']?>" title="<?=$value['name']?>" target="_self"><img src="<?=$value['hinh_anh']?>" width=70 height=70 title="<?=$value['name']?>" alt="<?=$value['name']?>" class="wpp-thumbnail wpp_cached_thumb wpp_featured" /></a> <a href="product/<?=$value['url']?>" title="<?=$value['name']?>" class="wpp-post-title" target="_self"><?=$value['name']?></a>  <span class="post-stats"><span class="wpp-author"> <a href="product/<?=$value['url']?>">admin</a></span></span> 
+                           <a href="blog/<?=$value['url']?>" title="<?=$value['name']?>" target="_self"><img src="<?=$value['hinh_anh']?>" width=70 height=70 title="<?=$value['name']?>" alt="<?=$value['name']?>" class="wpp-thumbnail wpp_cached_thumb wpp_featured" /></a> <a href="blog/<?=$value['url']?>" title="<?=$value['name']?>" class="wpp-post-title" target="_self"><?=$value['name']?></a>  <span class="post-stats"><span class="wpp-author"> <a href="blog/<?=$value['url']?>">admin</a></span></span> 
                         </li>
                         <?php } ?>
                      </ul>
@@ -116,7 +102,7 @@
                      <h5 class="section-nav-title">Danh mục</h5>
                      <ul>
                         <?php foreach ($danhmuc as $item) { ?>
-                        <li class=""><a href="product/1/<?=$item['url']?>" ><?=$item['name']?></a> (<?=$item['total']?>)</li>
+                        <li class=""><a href="blog/1/<?=$item['url']?>" ><?=$item['name']?></a> (<?=$item['total']?>)</li>
                         <?php } ?>
                      </ul>
                   </aside>
@@ -147,7 +133,7 @@
                            data-tickerhover=true
                            >
                            <ul class="lcam-carousel">
-                              <?php foreach ($search as $value) { ?>
+                              <?php foreach ($baiviet as $value) { ?>
                               <li>
                                  <div id="layers-widget-lcam_contents-13-232" class="lcam-consingle-default has-image">
                                     <div class="media no-push-bottom image-top medium">

@@ -1,5 +1,12 @@
 <?php
     $banner=$data->getbanner(1);
+    $banner1=$data->getbanner(2);
+    $banner2=$data->getbanner(3);
+    $doitac=$data->getbanner(10);
+    $doingu= $data->doingu(16);
+    $hoidap=$data->doingu(17);
+    $ykien=$data->doingu(18);
+    $baiviet=$data->baiviethome();
 ?>
         <section id="wrapper-content" class="wrapper-content">
             <section id="layers-widget-slide-35" class="widget layers-slider-widget row slide swiper-container slidershow slider-top   auto-height not-full-screen" style="">
@@ -224,19 +231,19 @@
                     </div>
                 </div>
                 <div class="row container list-grid">
-                <?php for ($i=1; $i <=4 ; $i++) { ?>
+               <?php foreach ($doingu as $value) { ?>
                     <div id="layers-widget-layers_plus_column_team-5-34" class="layers-masonry-column layers-plus span-3  column team has-image">
                         <div class="media invert image-top medium">
                             <div class="media-image ">
-                                <img width="237" height="325" src="template/wp-content/uploads/2016/08/dt1.jpg" class="attachment-medium" alt="dt1" />
+                                <img width="237" height="325" src="<?=$value['hinh_anh']?>" class="attachment-medium" alt="dt1" />
                             </div>
                             <div class="media-body text-center">
                                 <h5 class="heading">
-                                    Lò Thế Quỳnh
+                                    <?=$value['name']?>
                                 </h5>
-                                <div class="excerpt designation">Khoa ngoại thần kinh</div>
+                                <!-- <div class="excerpt designation">Khoa ngoại thần kinh</div> -->
                                 <div class="excerpt">
-                                    <p>Với nhiều năm kinh nghiệm trong việc khám bệnh Dr.Tuyet sẽ giúp quý bệnh nhân an tâm.</p>
+                                    <p><?=$value['mo_ta']?></p>
                                 </div>
                                 <div class="excerpt ">
                                     <ul class="team-social style1">
@@ -254,7 +261,7 @@
                     
                 </div>
             </section>
-            <section class="widget row gridmaker-vertical-massive bo-cuc-trang " id="layers-widget-layers_plus_column_gridmaker-3">
+            <section class="widget row gridmaker-vertical-massive bo-cuc-trang " id="layers-widget-layers_plus_column_gridmaker-3" style="    background-image: url(<?=$banner1[0]['hinh_anh']?>);">
                 <div class="row  list-grid">
                     <div id="layers-widget-layers_plus_column_gridmaker-3-7" class="layers-masonry-column clinix-gridmaker span-6  column">
                         <div class="media  ">
@@ -264,7 +271,7 @@
                                         <div class="section-title clearfix medium text-left ">
                                             <h3 class="heading">Tận Tâm - Chuyên Nghiệp</h3>
                                             <div class="excerpt">
-                                                <p>Chúng tôi luôn hi vọng đem đến cho mọi người một sức khỏe tốt với chế độ chăm sóc, thiết bị và kinh nghiệm tốt nhất. Để mọi người có thể cảm thấy thoải mái và nhanh chóng hồi phục sức khỏe</p>
+                                                <p>Trung Quan Media.,LTD hướng đến trở thành tổ chức cung cấp dịch vụ Call Center và CSKH chuyên nghiệp hàng đầu Việt Nam, vươn ra thế giới mang tầm vóc quốc tế.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -272,7 +279,7 @@
                                         <div id="layers-widget-column-45-823" class="layers-masonry-column layers-widget-column-823 span-12  column  has-image">
                                             <div class="media image-top medium">
                                                 <div class="media-image ">
-                                                    <img width="929" height="477" src="template/wp-content/uploads/2016/09/Responsive-showcase-presentation_031.png" class="attachment-full" alt="Responsive-showcase-presentation_03" />
+                                                    <!-- <img width="929" height="477" src="https://webdoctor.vn/wp-content/uploads/2017/06/sms-mar.jpg" class="attachment-full" alt="Responsive-showcase-presentation_03" /> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -291,54 +298,20 @@
                                                 <h3 class="heading">Tư Vấn Hỏi Đáp</h3>
                                             </div>
                                             <div class="row   ">
+                                                <?php foreach ($hoidap as $value) { ?>
                                                 <div id="layers-widget-layers_plus_column_xvaccordion-5-923" class="animatedParent">
                                                     <div class="media-body text-left animated bounceInUp">
                                                         <h3 class="uk-accordion-title ">
-                                                            Cách chăm sóc sức khỏe
+                                                            <?=$value['name']?>
                                                         </h3>
                                                         <div class="media image-left medium uk-accordion-content">
                                                             <div class="excerpt">
-                                                                <p>Để phòng và điều trị bệnh mãn tính, chúng ta cần tham khảo các cách chăm sóc và bảo vệ sức khỏe: xây dựng chế độ ăn khoa học, uống đủ nước, vận động, kiểm tra sức khỏe định kì..</p>
+                                                                <p><?=$value['mo_ta']?></p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div id="layers-widget-layers_plus_column_xvaccordion-5-132" class="animatedParent">
-                                                    <div class="media-body text-left animated bounceInUp">
-                                                        <h3 class="uk-accordion-title ">
-                                                            Ăn sáng đúng cách như thế nào ?
-                                                        </h3>
-                                                        <div class="media image-left medium uk-accordion-content">
-                                                            <div class="excerpt">
-                                                                <p>Một số điều lưu ý khi ăn sáng: Không nên ăn sáng khi vừa ngủ dậy, không nên ăn sáng quá muộn, không ăn quá no, không ăn nhiều thị và thức ăn nhanh, không nên ăn sáng bằng trái cây</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="layers-widget-layers_plus_column_xvaccordion-5-653" class="animatedParent">
-                                                    <div class="media-body text-left animated bounceInUp">
-                                                        <h3 class="uk-accordion-title ">
-                                                            Trào ngược dạ dày thực quản, tránh ăn gì?
-                                                        </h3>
-                                                        <div class="media image-left medium uk-accordion-content">
-                                                            <div class="excerpt">
-                                                                <p>Ngoài việc dùng thuốc theo chỉ định của bác sĩ, bệnh nhân cần hạn chế những thực phẩm sau để cải thiện tình trạng khó chịu này như: hạn chế chất béo, tránh nước uống cồn, kích thích...</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="layers-widget-layers_plus_column_xvaccordion-5-853" class="animatedParent">
-                                                    <div class="media-body text-left animated bounceInUp">
-                                                        <h3 class="uk-accordion-title ">
-                                                            Cách điều trị gan nhiễm mỡ
-                                                        </h3>
-                                                        <div class="media image-left medium uk-accordion-content">
-                                                            <div class="excerpt">
-                                                                <p>Cách điều trị chủ yếu cho tình trạng gan nhiễm mỡ mà các bác sĩ đang thực hiện là khuyên người bệnh nên có một chế độ ăn uống hợp lý</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                               <?php } ?>
                                             </div>
                                         </div>
                                     </div>
@@ -360,66 +333,28 @@
                     <div class="lcam-carousel-container" data-mode="horizontal" data-speed="500" data-maxslides="3" data-moveslides="1" data-slidemargin="30" data-randomstart=false data-adaptiveheight=false data-adaptiveHeightspeed="0" data-touchenabled=true data-auto=false
                         data-pause="4000" data-autohover=false data-autodelay="0" data-ticker=false data-tickerhover=true>
                         <ul class="lcam-carousel">
+                        <?php foreach ($baiviet as $item) { ?>
                             <li>
                                 <article id="layers-widget-lcam_posts-11-688" class="lcam-posingle-style-1 thumbnail not-overlay ">
                                     <div class="thumbnail-media">
-                                        <a href="benh-nhi-nho-tuoi-nhat-the-gioi-duoc-ghep-gan-dao-chieu/index.html"><img width="615" height="409" src="template/wp-content/uploads/2016/08/tintuc7.jpg" class="attachment-layers--medium" alt="tintuc7" /></a>
+                                        <a href="blog/<?=$item['url']?>"><img width="615" height="409" src="<?=$item['hinh_anh']?>" alt="tintuc7" /></a>
                                     </div>
                                     <div class="thumbnail-body">
                                         <div class="overlay">
                                             <header class="article-title">
-                                                <h4 class="heading"><a href="benh-nhi-nho-tuoi-nhat-the-gioi-duoc-ghep-gan-dao-chieu/index.html">Bệnh nhi nhỏ tuổi nhất thế giới được ghép gan</a></h4>
+                                                <h4 class="heading"><a href="blog/<?=$item['url']?>"><?=$item['name']?></a></h4>
                                             </header>
-                                            <div class="copy push-bottom">Các bác sĩ đã lấy phần gan bên trái của cha em bé, xoay nó lại và ghép vào phần gan bên phải của bé. Do tính chất phứ&#8230;</div>
+                                            <div class="copy push-bottom"><?=$item['mo_ta']?></div>
                                             <footer class="meta-info push-bottom ">
-                                                <p><span class="meta-item meta-date"><i class="l-clock-o"></i> 24/08/2016</span> <span class="meta-item meta-author"><i class="l-user"></i> <a href="author/admin/index.html" tiêu đề=" admin" rel="tác giả">admin</a></span>                                                    <span class="meta-item meta-category"><i class="l-folder-open-o"></i>  <a href="chuyen-muc/tin-tuc/index.html" title=" Tin tức">Tin tức</a></span></p>
+                                                <p><span class="meta-item meta-date"><i class="l-clock-o"></i> <?=date('d/m/Y',strtotime($item['ngay_dang']))?></span> <span class="meta-item meta-author"><i class="l-user"></i> <a href="" tiêu đề=" admin" rel="tác giả">admin</a></span>                                                    <span class="meta-item meta-category"><i class="l-folder-open-o"></i>  <a href="blog" title=" Tin tức">Tin tức</a></span></p>
                                             </footer>
-                                            <a href="benh-nhi-nho-tuoi-nhat-the-gioi-duoc-ghep-gan-dao-chieu/index.html" class="button">Xem thêm</a>
+                                            <a href="blog/<?=$item['url']?>" class="button">Xem thêm</a>
                                         </div>
                                     </div>
                                 </article>
                                 <!-- .lcam-consingle -->
                             </li>
-                            <li>
-                                <article id="layers-widget-lcam_posts-11-686" class="lcam-posingle-style-1 thumbnail not-overlay ">
-                                    <div class="thumbnail-media">
-                                        <a href="nghien-cuu-vaccin-nho-mui-phong-benh-do-chlamydia/index.html"><img width="900" height="600" src="template/wp-content/uploads/2016/08/tintuc6.jpg" class="attachment-layers--medium" alt="tintuc6" /></a>
-                                    </div>
-                                    <div class="thumbnail-body">
-                                        <div class="overlay">
-                                            <header class="article-title">
-                                                <h4 class="heading"><a href="nghien-cuu-vaccin-nho-mui-phong-benh-do-chlamydia/index.html">Nghiên cứu vaccin nhỏ mũi phòng bệnh do Chlamydia</a></h4>
-                                            </header>
-                                            <div class="copy push-bottom">Nhóm nghiên cứu đã thử nghiệm trên chuột cho thấy, vaccin chứa kháng nguyên BD584 đã bảo vệ các động vật gặm nhấm k&#8230;</div>
-                                            <footer class="meta-info push-bottom ">
-                                                <p><span class="meta-item meta-date"><i class="l-clock-o"></i> 24/08/2016</span> <span class="meta-item meta-author"><i class="l-user"></i> <a href="author/admin/index.html" tiêu đề=" admin" rel="tác giả">admin</a></span>                                                    <span class="meta-item meta-category"><i class="l-folder-open-o"></i>  <a href="chuyen-muc/tin-tuc/index.html" title=" Tin tức">Tin tức</a></span></p>
-                                            </footer>
-                                            <a href="nghien-cuu-vaccin-nho-mui-phong-benh-do-chlamydia/index.html" class="button">Xem thêm</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <!-- .lcam-consingle -->
-                            </li>
-                            <li>
-                                <article id="layers-widget-lcam_posts-11-665" class="lcam-posingle-style-1 thumbnail not-overlay ">
-                                    <div class="thumbnail-media">
-                                        <a href="nhung-thac-mac-thuong-gap-ve-giac-ngu-cua-tre/index.html"><img width="900" height="600" src="template/wp-content/uploads/2016/08/tintuc121.jpg" class="attachment-layers--medium" alt="tintuc12" /></a>
-                                    </div>
-                                    <div class="thumbnail-body">
-                                        <div class="overlay">
-                                            <header class="article-title">
-                                                <h4 class="heading"><a href="nhung-thac-mac-thuong-gap-ve-giac-ngu-cua-tre/index.html">Những thắc mắc thường gặp về giấc ngủ của trẻ</a></h4>
-                                            </header>
-                                            <div class="copy push-bottom">Đứa con 3 tuổi của tôi thường bị giật trong khi bé buồn ngủ. Điều này có bình thường không? Trả lời: Biểu hiện&#8230;</div>
-                                            <footer class="meta-info push-bottom ">
-                                                <p><span class="meta-item meta-date"><i class="l-clock-o"></i> 22/08/2016</span> <span class="meta-item meta-author"><i class="l-user"></i> <a href="author/admin/index.html" tiêu đề=" admin" rel="tác giả">admin</a></span>                                                    <span class="meta-item meta-category"><i class="l-folder-open-o"></i>  <a href="chuyen-muc/tin-tuc/index.html" title=" Tin tức">Tin tức</a></span></p>
-                                            </footer>
-                                            <a href="nhung-thac-mac-thuong-gap-ve-giac-ngu-cua-tre/index.html" class="button">Xem thêm</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <!-- .lcam-consingle -->
-                            </li>
+                        <?php } ?>
                         </ul>
                         <div class="lcam-carousel-controller-center">
                             <button id="#layers-widget-lcam_posts-11-prev" class="lcam-carousel-to-prev"><i class="fa fa-caret-left"></i></button>
@@ -431,7 +366,7 @@
                 <!-- .row -->
             </section>
             <!-- .lcam-widget-section -->
-            <section class="widget row gridmaker-vertical-massive mcare-fullwith-section " id="layers-widget-layers_plus_column_gridmaker-5">
+            <section class="widget row gridmaker-vertical-massive mcare-fullwith-section " id="layers-widget-layers_plus_column_gridmaker-5" style="background-image: url(<?=$banner2[0]['hinh_anh']?>);">
                 <div class="row  list-grid">
                     <div id="layers-widget-layers_plus_column_gridmaker-5-5" class="layers-masonry-column clinix-gridmaker span-8  column">
                         <div class="media  ">
@@ -439,14 +374,15 @@
                                 <section class="widget row counter-vertical-massive statistics-box bo-dem " id="layers-widget-layers_plus_column_counter-3">
                                     <div class="row container list-grid">
                                         <div id="layers-widget-layers_plus_column_counter-3-430" class="layers-masonry-column clinix-counter span-3  column">
-                                            <div class="media image-top medium">
+                                            <div class="media  medium">
                                                 <div class="media-body text-center">
                                                     <div class="counter-box">
                                                         <div class="media-image ">
+                                                            <img width="64" height="64" src="template/wp-content/uploads/2016/11/hihi.png" class="attachment-medium"  />
                                                         </div>
                                                         <div class="sc-counter">100</div>
                                                         <h5 class="heading">
-                                                            Nhân viên
+                                                            Nhân viên sale
                                                         </h5>
                                                     </div>
                                                 </div>
@@ -457,10 +393,11 @@
                                                 <div class="media-body text-center">
                                                     <div class="counter-box">
                                                         <div class="media-image ">
+                                                             <img width="64" height="64" src="template/wp-content/uploads/2016/11/fast.png" class="attachment-medium" alt="kham-benh" />
                                                         </div>
                                                         <div class="sc-counter">55</div>
                                                         <h5 class="heading">
-                                                            Bác Sĩ
+                                                            Marketing
                                                         </h5>
                                                     </div>
                                                 </div>
@@ -471,10 +408,11 @@
                                                 <div class="media-body text-center">
                                                     <div class="counter-box">
                                                         <div class="media-image ">
+                                                            <img width="64" height="64" src="uploads/giaiphap.png" class="attachment-medium" alt="" />
                                                         </div>
-                                                        <div class="sc-counter">200</div>
+                                                        <div class="sc-counter">5</div>
                                                         <h5 class="heading">
-                                                            Giường Bệnh
+                                                            Giải pháp
                                                         </h5>
                                                     </div>
                                                 </div>
@@ -485,6 +423,7 @@
                                                 <div class="media-body text-center">
                                                     <div class="counter-box">
                                                         <div class="media-image ">
+                                                            <img width="64" height="64" src="template/wp-content/uploads/2016/11/email.png" class="attachment-medium" alt="xet-nghiem" />
                                                         </div>
                                                         <div class="sc-counter">4</div>
                                                         <h5 class="heading">
@@ -508,12 +447,12 @@
                                             <div class="media image-top medium">
                                                 <div class="media-body text-left">
                                                     <h5 class="heading">
-                                                        Hơn 2000 bệnh nhân đã khám và điều trị thành công
+                                                        Hơn 200 doanh nghiệp đã hợp tác cùng chúng tôi
                                                     </h5>
                                                     <div class="excerpt">
-                                                        <p>Chúng tôi rất cảm ơn quý bệnh nhân đã tin tưởng và chọn Meditreat làm nơi chăm sóc sức khỏe bản thân và gia đình. </p>
+                                                        <p>Chúng tôi rất cảm ơn quý doanh nghiệp đã tin tưởng và chọn <?=$thongtin[0]['value']?> để hợp tác và phát triển. </p>
                                                     </div>
-                                                    <a href="http://7289.chilishop.net/xet-nghiem-chuan-doan/" class="button btn-medium">Xem thêm</a>
+                                                    <a href="" class="button btn-medium">Xem thêm</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -535,21 +474,21 @@
                     <div class="lcam-carousel-container" data-mode="horizontal" data-speed="500" data-maxslides="1" data-moveslides="1" data-slidemargin="10" data-randomstart=false data-adaptiveheight=false data-adaptiveHeightspeed="0" data-touchenabled=true data-auto=false
                         data-pause="4000" data-autohover=false data-autodelay="0" data-ticker=false data-tickerhover=true>
                         <ul class="lcam-carousel">
+                         <?php foreach ($ykien as $item) { ?>
                             <li>
                                 <div id="layers-widget-lcam_contents-11-783" class="lcam-consingle-default has-image">
                                     <div class="media no-push-bottom image-top medium">
                                         <!-- Featured image -->
                                         <div class="media-image image-rounded">
-                                            <img width="94" height="98" src="template/wp-content/uploads/2016/08/Vo-Thi-Ngoc1.jpg" class="attachment-layers-square-medium" alt="Vo-Thi-Ngoc" />
+                                            <img width="94" height="98" src="<?=$item['hinh_anh']?>" class="attachment-layers-square-medium" alt="<?=$item['url']?>" />
                                         </div>
                                         <!-- Media body -->
                                         <div class="media-body text-center">
                                             <h5 class="heading">
-                                                Chị Kim Anh
+                                                <?=$item['name']?>
                                             </h5>
                                             <div class="excerpt">
-                                                <p>Tôi xin chân thành cảm ơn bác sĩ, y tá đã động viên, khích lệ, giúp đỡ và tạo điều kiện thuận lợi cho tôi trong suốt thời gian điều trị tại bệnh viện. Chúc bệnh viện ngày càng phát triển để giúp nhiều bệnh
-                                                    nhân hơn nữa.</p>
+                                                <p><?=$item['mo_ta']?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -557,27 +496,7 @@
                                 </div>
                                 <!-- .lcam-consingle -->
                             </li>
-                            <li>
-                                <div id="layers-widget-lcam_contents-11-324" class="lcam-consingle-default has-image">
-                                    <div class="media no-push-bottom image-top medium">
-                                        <!-- Featured image -->
-                                        <div class="media-image image-rounded">
-                                            <img width="94" height="98" src="template/wp-content/uploads/2016/08/Do-hung-cuong.jpg" class="attachment-layers-square-medium" alt="Do-hung-cuong" />
-                                        </div>
-                                        <!-- Media body -->
-                                        <div class="media-body text-center">
-                                            <h5 class="heading">
-                                                Anh Hoàng Tuấn
-                                            </h5>
-                                            <div class="excerpt">
-                                                <p>Meditreat là nơi đáng tin cậy đáng để chúng ta gửi gắm sức khỏe của bản thân và gia đình. Với đội ngũ y bác sĩ luôn tận tâm, nhiệt huyết và giàu kinh nghiệm tôi chân thành cám ơn quý bệnh viện.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .media -->
-                                </div>
-                                <!-- .lcam-consingle -->
-                            </li>
+                           <?php } ?>
                         </ul>
                         <div class="lcam-carousel-controller-center-hover">
                             <button id="#layers-widget-lcam_contents-11-prev" class="lcam-carousel-to-prev"><i class="fa fa-caret-left"></i></button>
@@ -595,12 +514,13 @@
                     <div class="lcam-carousel-container" data-mode="horizontal" data-speed="500" data-maxslides="4" data-moveslides="1" data-slidemargin="0" data-randomstart=false data-adaptiveheight=false data-adaptiveHeightspeed="0" data-touchenabled=true data-auto=false
                         data-pause="4000" data-autohover=false data-autodelay="0" data-ticker=false data-tickerhover=true>
                         <ul class="lcam-carousel">
+                        <?php foreach ($doitac as $value) { ?>
                             <li>
                                 <div id="layers-widget-lcam_contents-15-261" class="lcam-consingle-default has-image">
                                     <div class="media no-push-bottom image-top medium">
                                         <!-- Featured image -->
                                         <div class="media-image ">
-                                            <img width="161" height="40" src="template/wp-content/uploads/2016/08/logo4.png" class="attachment-full" alt="logo4" />
+                                            <img width="161" height="40" src="<?=$value['hinh_anh']?>" class="attachment-full" alt="logo4" />
                                         </div>
                                         <!-- Media body -->
                                     </div>
@@ -608,45 +528,7 @@
                                 </div>
                                 <!-- .lcam-consingle -->
                             </li>
-                            <li>
-                                <div id="layers-widget-lcam_contents-15-946" class="lcam-consingle-default has-image">
-                                    <div class="media no-push-bottom image-top medium">
-                                        <!-- Featured image -->
-                                        <div class="media-image ">
-                                            <img width="162" height="40" src="template/wp-content/uploads/2016/08/logo3.png" class="attachment-full" alt="logo3" />
-                                        </div>
-                                        <!-- Media body -->
-                                    </div>
-                                    <!-- .media -->
-                                </div>
-                                <!-- .lcam-consingle -->
-                            </li>
-                            <li>
-                                <div id="layers-widget-lcam_contents-15-451" class="lcam-consingle-default has-image">
-                                    <div class="media no-push-bottom image-top medium">
-                                        <!-- Featured image -->
-                                        <div class="media-image ">
-                                            <img width="156" height="40" src="template/wp-content/uploads/2016/08/logo2.png" class="attachment-full" alt="logo2" />
-                                        </div>
-                                        <!-- Media body -->
-                                    </div>
-                                    <!-- .media -->
-                                </div>
-                                <!-- .lcam-consingle -->
-                            </li>
-                            <li>
-                                <div id="layers-widget-lcam_contents-15-594" class="lcam-consingle-default has-image">
-                                    <div class="media no-push-bottom image-top medium">
-                                        <!-- Featured image -->
-                                        <div class="media-image ">
-                                            <img width="161" height="40" src="template/wp-content/uploads/2016/08/logo1.png" class="attachment-full" alt="logo1" />
-                                        </div>
-                                        <!-- Media body -->
-                                    </div>
-                                    <!-- .media -->
-                                </div>
-                                <!-- .lcam-consingle -->
-                            </li>
+                        <?php } ?>
                         </ul>
                         <div class="lcam-carousel-controller-center-hover">
                             <button id="#layers-widget-lcam_contents-15-prev" class="lcam-carousel-to-prev"><i class="fa fa-caret-left"></i></button>

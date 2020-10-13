@@ -1117,7 +1117,7 @@ body {
   padding-top: 88px;
   padding-bottom: 41px !important;
 }
-.mcare-fullwith-section .span-8.column .layers-masonry-column:nth-child(1) .counter-box:before {
+/*.mcare-fullwith-section .span-8.column .layers-masonry-column:nth-child(1) .counter-box:before {
   content: "\e041";
   font-family: Flaticon;
   width: 83px;
@@ -1172,7 +1172,7 @@ body {
   border-radius: 50%;
   display: inline-block;
   transition: .5s;
-}
+}*/
 .mcare-fullwith-section .span-8.column .layers-masonry-column .sc-counter {
   color: #fff;
 }
@@ -1642,7 +1642,7 @@ body {
 }
 .sidebar .meditreat .animatedParent:nth-child(1) .uk-accordion-title:before {
   font-family: Flaticon;
-  content: "\e021";
+  content: "\e022";
   position: relative;
   left: 0px;
   border-radius: 0px 0 0 0;
